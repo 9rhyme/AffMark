@@ -1573,18 +1573,18 @@ timeline10 = anime.timeline({loop: true, autoplay:false})
 // Wrap every letter in a span
 var textWrapper = document.getElementById('ml11_letters-1');
 
-textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter letter-1'>$&</span>");
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
 
 textWrapper = document.getElementById('ml11_letters-2');
 
-textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter letter-2'>$&</span>");
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
 
 textWrapper = document.getElementById('ml11_letters-3');
 
-textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter letter-3'>$&</span>");
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
 textWrapper = document.getElementById('ml11_letters-4');
 
-textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter letter-4'>$&</span>");
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
 timeline11 = anime.timeline({loop: true,autoplay:false})
   .add({
     targets: '.ml11 .line1',
@@ -1975,8 +1975,26 @@ timeline13 = anime.timeline({loop: true, autoplay:false})
     <div class="innert composition-wrapper" data-color="45383c">
       <h1 class="ml14">
   <span class="text-wrapper">
-    <span class="letters">Find Your Element</span>
-    <span class="line"></span>
+    <span class="letters AdText target1" id="ml14_letters-1">Noise Cancelling</span>
+    <span class="line line1 extraBG"></span>
+  </span>
+</h1>
+<h1 class="ml14">
+  <span class="text-wrapper">
+    <span class="letters AdText target2" id="ml14_letters-2">Comfortable</span>
+    <span class="line line2 extraBG"></span>
+  </span>
+</h1>
+<h1 class="ml14">
+  <span class="text-wrapper">
+    <span class="letters AdText target3" id="ml14_letters-3">Bluetooth 5.0</span>
+    <span class="line line3 extraBG"></span>
+  </span>
+</h1>
+<h1 class="ml14">
+  <span class="text-wrapper">
+    <span class="letters AdText target4" id="ml14_letters-4">Get It Now!</span>
+    <span class="line line4 extraBG"></span>
   </span>
 </h1>
 
@@ -1984,18 +2002,30 @@ timeline13 = anime.timeline({loop: true, autoplay:false})
 
 <script>
 // Wrap every letter in a span
-var textWrapper = document.querySelector('.ml14 .letters');
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+var textWrapper = document.getElementById('ml14_letters-1');
+console.log(textWrapper)
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
+
+textWrapper = document.getElementById('ml14_letters-2');
+
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
+
+textWrapper = document.getElementById('ml14_letters-3');
+
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
+textWrapper = document.getElementById('ml14_letters-4');
+
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
 
 timeline14 = anime.timeline({loop: true})
   .add({
-    targets: '.ml14 .line',
+    targets: '.ml14 .line1',
     scaleX: [0,1],
     opacity: [0.5,1],
     easing: "easeInOutExpo",
     duration: 900
   }).add({
-    targets: '.ml14 .letter',
+    targets: '.ml14 .letter-1',
     opacity: [0,1],
     translateX: [40,0],
     translateZ: 0,
@@ -2005,7 +2035,73 @@ timeline14 = anime.timeline({loop: true})
     offset: '-=600',
     delay: (el, i) => 150 + 25 * i
   }).add({
-    targets: '.ml14',
+    targets: '.ml14 .letter-1 , .ml14 .line1',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  }).add({
+    targets: '.ml14 .line2',
+    scaleX: [0,1],
+    opacity: [0.5,1],
+    easing: "easeInOutExpo",
+    duration: 900
+  }).add({
+    targets: '.ml14 .letter-2',
+    opacity: [0,1],
+    translateX: [40,0],
+    translateZ: 0,
+    scaleX: [0.3, 1],
+    easing: "easeOutExpo",
+    duration: 800,
+    offset: '-=600',
+    delay: (el, i) => 150 + 25 * i
+  }).add({
+    targets: '.ml14 .letter-2 , .ml14 .line2',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  })  .add({
+    targets: '.ml14 .line3',
+    scaleX: [0,1],
+    opacity: [0.5,1],
+    easing: "easeInOutExpo",
+    duration: 900
+  }).add({
+    targets: '.ml14 .letter-3',
+    opacity: [0,1],
+    translateX: [40,0],
+    translateZ: 0,
+    scaleX: [0.3, 1],
+    easing: "easeOutExpo",
+    duration: 800,
+    offset: '-=600',
+    delay: (el, i) => 150 + 25 * i
+  }).add({
+    targets: '.ml14 .letter-3 , .ml14 .line3',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  }).add({
+    targets: '.ml14 .line4',
+    scaleX: [0,1],
+    opacity: [0.5,1],
+    easing: "easeInOutExpo",
+    duration: 900
+  }).add({
+    targets: '.ml14 .letter-4',
+    opacity: [0,1],
+    translateX: [40,0],
+    translateZ: 0,
+    scaleX: [0.3, 1],
+    easing: "easeOutExpo",
+    duration: 800,
+    offset: '-=600',
+    delay: (el, i) => 150 + 25 * i
+  }).add({
+    targets: '.ml14 .letter-4 , .ml14 .line4',
     opacity: 0,
     duration: 1000,
     easing: "easeOutExpo",
