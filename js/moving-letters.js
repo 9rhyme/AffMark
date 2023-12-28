@@ -8,10 +8,7 @@ app.ready(() => {
     ml.showComposition(e.currentTarget, e, { refreshAd: true });
   });
 
-  listen(".composition-back-button", "click", e => {
-    e.preventDefault();
-    ml.hideSource();
-  });
+  
 
   listen(".header-title", "click", ml.animateHeader);
   listen(window, "scroll", ml.onlyPlayVisible);
@@ -23,12 +20,11 @@ app.ready(() => {
   listen(document, "pressed:ESC", ml.hideSource);
 
   ml.compositions = selectAll(".composition");
-  ml.ad = select(".ml-carbon-ad");
+ 
   const header = select('.header-title');
   header.innerHTML = header.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-  ml.onlyPlayVisible();
-  ml.loadCompositionFromCurrentHash();
+ 
 });
 
 ml.animateHeader = function() {
@@ -41,13 +37,7 @@ ml.animateHeader = function() {
   });
 }
 
-ml.onlyPlayVisible = function() {
-  // Don't play if any overlays are playing
-  if (ml.isShowingSource || app.menu.visible) return;
-  ml.compositions.forEach(function(element, i) {
-    ml.compShouldPlay(element) ? ml.playComposition(element) : ml.pauseComposition(element);
-  });
-}
+
 
 ml.compShouldPlay = function(comp) {
   var winHeight = window.innerHeight;
@@ -60,10 +50,7 @@ ml.compShouldPlay = function(comp) {
   return true;
 }
 
-ml.playComposition = function(comp) {
-  var compID = comp.querySelector("h1").className;
-  ml.timelines[compID].play();
-}
+
 
 ml.restartComposition = function(comp) {
   var compID = comp.querySelector("h1").className;

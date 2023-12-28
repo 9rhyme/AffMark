@@ -1,74 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="preload" href="/css/font-files/Inter.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/w3.css">
-  <script src="js/w3color.js"></script>
-<link rel="preconnect" href="https://srv.carbonads.net/" crossorigin>
-<link rel="preconnect" href="https://cdn4.buysellads.net/" crossorigin>
+  
+  <link rel="stylesheet" href="css/color.css">
+  
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
 
     <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   
-  <meta property="og:title" content="Moving Letters" />
-  <meta property="og:description" content="Text animated with JavaScript & anime.js" />
-  <meta property="og:url" content="https://tobiasahlin.com/moving-letters/" />
-  <meta property="og:type" content="blog" />
-  <meta property="og:image" content="https://tobiasahlin.com/static/-social/og_moving-letters.jpg" />
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="627">
+  <meta property="og:title" content="Marketing Video Animation" />
+ 
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@tobiasahlin" />
-  <meta name="twitter:creator" content="@tobiasahlin" />
-
-  <meta name="description" content="Text animated with JavaScript & anime.js" />
-  <meta name="keywords" content="text, typography, animated, animated, javascript, css, tobias ahlin, github, html5, css3, tobias ahlin, github, spotify, hyper island" />
+ 
 
 
-  <title>Aff Marketing</title>
+
+  <title>Marketing Video Animation</title>
 
   <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/css/moving-letters.css"> 
+  <link rel="stylesheet" href="css/dropdown.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.1/tinycolor.min.js"></script>
 
   <script src="/js/anime.min.js"></script>
 	
 <script type="text/javascript" src="/js/app.js"></script>
 
 
-<script>
-	// Clear localStorage if number of posts have changed
-	app.search.postCountKey = "postCount";
-	var postCountCached = parseInt(localStorage.getItem(app.search.postCountKey));
-	var postCount = 129;
 
-	// If number of posts have changed, clear cache
-	if (postCount != postCountCached) { localStorage.clear(); }
-	localStorage.setItem(app.search.postCountKey, 129); 
-</script>
   <script type="text/javascript" src="/js/moving-letters.js"></script>
 </head>
-<body class="moving-letters">
+<body class="moving-letters" style="background: #dfe0e7;">
 
-
-
-<div class="ml-carbon-ad">
+	<div class="header" style="background-color: #11101D;">
+    <canvas class="site-nav-canvas"></canvas>
+  <button class="js-menu menu button-clear menu-white menu-movingLetters" aria-label="Site navigation">
+    <span class="menu-icon-line-1 menu-icon-line" style="background-color: #ebebee;"></span>
+    <span class="menu-icon-line-2 menu-icon-line" style="background-color: #ebebee;"></span>
+    <span class="menu-icon-line-3 menu-icon-line" style="background-color: #ebebee;"></span>
+  </button>
   
-<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=tobiasahlincom" id="_carbonads_js"></script>
+  <div class="site-nav-overlay js-nav">
+    <div class="nav-content">
+      <div class="js-nav-header nav-header">
+        <span class="nav-header-text">Tobias Ahlin</span>
+        <div class="nav-header-line js-nav-header-line"></div>
+      </div>
+  
+      <ul class="nav-categories">
+        <li class="nav-category js-nav-animate"><a href="/" class="nav-link">Overview</a></li>
+        <li class="nav-category js-nav-animate"><a href="/blog/" class="nav-link">Blog</a></li>
+        <li class="nav-category js-nav-animate"><a href="/blog/tutorials/" class="nav-link">Tutorials</a></li>
+      </ul>
+  
+      <div class="nav-sublinks js-nav-animate">
+        <div class="js-nav-animate">
+        <a class="nav-link nav-sublink" href="/moving-letters/">Moving Letters</a>
+        <a class="nav-link nav-sublink" href="/typesource/">TypeSource</a>
+        <a class="nav-link nav-sublink" href="/spinkit/">SpinKit</a>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  
+    <h1 class="header-title" style="color: #ebebee;">Marketing Video Animation</h1>
+    
+  </div>
 
-</div>
+
 
 <div class=" img-container" style="z-index: 20; position: fixed; width: 50%; height: 50%; display: grid; grid-template-columns: 1fr; text-align: center;">
   <img class="img product-img" src="images/out.png" alt="" style="width: 20%; padding-top: 8%; margin: auto;">
-  <img class="img amazon-img" src="images/amazon-buy-button.png" alt="" style="width: 25%;  margin: auto; margin-left: 40%;">
+  <img class="img amazon-img" id="amazon" src="images/amazon-Light.png" alt="" style="width: 25%;  margin: auto; margin-left: 40%;">
 </div>
 
 
 <div class="compositions" style="position: fixed; width: 50%; height: 50%;">
   
-	<div class="inner composition" id="comp1" style=" display: block; background-color: #f3e9c6; " >
+	<div class="inner composition" id="comp1" style=" display: block; background-color: #9ba5b5 " >
     
         <div class="innert composition-wrapper" data-color="9ba5b5">
             <h1 class="ml1">
@@ -2003,7 +2018,7 @@ timeline13 = anime.timeline({loop: true, autoplay:false})
 <script>
 // Wrap every letter in a span
 var textWrapper = document.getElementById('ml14_letters-1');
-console.log(textWrapper)
+
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
 
 textWrapper = document.getElementById('ml14_letters-2');
@@ -2017,7 +2032,7 @@ textWrapper = document.getElementById('ml14_letters-4');
 
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
 
-timeline14 = anime.timeline({loop: true})
+timeline14 = anime.timeline({loop: true,autoplay:false})
   .add({
     targets: '.ml14 .line1',
     scaleX: [0,1],
@@ -2106,7 +2121,25 @@ timeline14 = anime.timeline({loop: true})
     duration: 1000,
     easing: "easeOutExpo",
     delay: 1000
-  });
+  }).add({
+  targets:'.product-img',
+    opacity: [0,1],
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 100,}
+).add({
+  targets:'.amazon-img',
+    opacity: [0,1],
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000,
+}).add({
+  targets:'img',
+  duration:1000,
+  opacity: [1,0],
+  easing: "easeOutExpo",
+    delay: 4000,
+});
 </script>
 
 <style>
@@ -2417,36 +2450,246 @@ timeline16.pause();
     
 }
 </script>
-<div class="select-comp" style="float: right;">
-    <select id="test" name="form_select" onchange="showDiv(this)">
-        <option value="comp1">comp1</option>
-        <option value="comp2">comp2</option>
-        <option value="comp3">comp3</option>
-        <option value="comp4">comp4</option>
-        <option value="comp5">comp5</option>
-        <option value="comp6">comp6</option>
-        <option value="comp7">comp7</option>
-        <option value="comp8">comp8</option>
-        <option value="comp9">comp9</option>
-        <option value="comp10">comp10</option>
-        <option value="comp11">comp11</option>
-        <option value="comp12">comp12</option>
-        <option value="comp13">comp13</option>
-        <option value="comp14">comp14</option>
-        <option value="comp15">comp15</option>
-        <option value="comp16">comp16</option>
-        
-     </select>
-</div>
 
-<div class="select-bg-color" style="width: 25%; float: right;">
-  <label for="color-picker">BG Color:</label>
-  <input type="color" value="#ff0000" id="color-picker1" />
-</div>
-<div class="select-txt-color" style="width: 25%; float: right;">
-  <label for="color-picker">Text Color:</label>
-  <input type="color" value="#ff0000" id="color-picker2" />
-</div>
+
+<style type="text/css">
+  .tg  {border-collapse:collapse;border-spacing:0;width: 30%;margin-left: 54%;margin-top: 2%;}
+
+  </style>
+  <table class="tg">
+  <tbody>
+    <tr>
+      <td class="tg-0lax" style="width: 40%;">
+        <div class="dropdown-menu" id="dropdown-menu" style="float: left;">
+          <button onclick="handleDropdownClicked(event)">
+            <span class="material-symbols-outlined">
+              dropdown
+            </span>
+            Select Animation
+            <span id="dropdown-icon" class="material-symbols-outlined">
+              expand_more
+            </span>
+          </button>
+          <section class="dropdown__menu-labels">
+            <button value="comp1" onclick="showDiv(this)">
+              
+              Animation 1
+            </button>
+            <button value="comp2" onclick="showDiv(this)">
+              
+              Animation 2
+            </button>
+            <button value="comp3" onclick="showDiv(this)">
+              
+              Animation 3
+            </button>
+            <button value="comp4" onclick="showDiv(this)">
+              
+              Animation 4
+            </button>
+            <button value="comp14" onclick="showDiv(this)">
+              
+              Animation 5
+            </button>
+            <button value="comp6" onclick="showDiv(this)">
+              
+              Animation 6
+            </button>
+            <button value="comp7" onclick="showDiv(this)">
+              
+              Animation 7
+            </button>
+            <button value="comp16" onclick="showDiv(this)">
+              
+              Animation 8
+            </button>
+            <button value="comp9" onclick="showDiv(this)">
+              
+              Animation 9
+            </button>
+            <button value="comp10" onclick="showDiv(this)">
+              
+              Animation 10
+            </button>
+            <button value="comp11" onclick="showDiv(this)">
+              
+              Animation 11
+            </button>
+            <button value="comp12" onclick="showDiv(this)">
+              
+              Animation 12
+            </button>
+            <button value="comp13" onclick="showDiv(this)">
+              
+              Animation 13
+            </button>
+            
+            
+          </section>
+        </div>
+        <script type="text/javascript" src="js/dropdown.js"></script>
+      </td>
+
+      <td class="tg-0lax" style="width:20%;">
+        <div class="select-txt-color" style="width: 15%; float: left; left:5%;">
+          <label for="color-picker" style="color: #11101D; ">Text Color:</label>
+          <input type="color" value="#ff0000" id="color-picker2" />
+        </div>
+      </td>
+      <td class="tg-0lax" style="width: min-content;">
+        
+        <div class="componentsBox" style="float: left; width: 100px; display: grid; grid-template-columns: 1fr;">
+          <span style="color: #11101D;">Alternative Logo:</span> 
+          <label class="switch m5">
+            <input type="checkbox" id="check" onchange="changePic()">
+            <small></small>
+          </label>
+        </div>
+        
+        <script type="text/javascript">
+          function changePic() {
+            var amazonImage = document.getElementById('amazon');
+            
+            if (document.getElementById("check").checked) {
+             
+              amazonImage.src = "images/amazon-Dark.png";
+            } else {
+              
+              amazonImage.src = "images/amazon-Light.png";
+            }
+          }
+        </script>
+      </td>
+    </tr>
+    
+    
+  </tbody>
+  </table>
+
+
+  <div class="color-picker-panel" style="float: right;">
+    <div class="panel-row">
+      <div class="swatches default-swatches"></div>
+      <button class="button eyedropper">Get Color</button>
+    </div>
+    <div class="panel-row">
+      <div class="spectrum-map">
+        <button id="spectrum-cursor" class="color-cursor"></button>
+        <canvas id="spectrum-canvas"></canvas>
+      </div>
+      <div class="hue-map">
+        <button id="hue-cursor" class="color-cursor"></button>
+        <canvas id="hue-canvas"></canvas>
+      </div>
+    </div>
+    <div class="panel-row">
+      <div id="rgb-fields" class="field-group value-fields rgb-fields active">
+        <div class="field-group">
+          <label for="" class="field-label">R:</label>
+          <input type="number" max="255" min="0" id="red" class="field-input rgb-input"/>
+        </div>
+        <div class="field-group">
+          <label for="" class="field-label">G:</label>
+          <input type="number" max="255" min="0" id="green" class="field-input rgb-input"/>
+        </div>
+        <div class="field-group">
+          <label for="" class="field-label">B:</label>
+          <input type="number" max="255" min="0" id="blue" class="field-input rgb-input"/>
+        </div>
+      </div>
+      <div id="hex-field" class="field-group value-fields hex-field">
+        <label for="" class="field-label">Hex:</label>
+        <input type="text" id="hex" class="field-input"/>
+      </div>
+      <button id="mode-toggle" class="button mode-toggle">Mode</button>
+    </div>
+    <div class="panel-row">
+      <h2 class="panel-header">User Colors</h2>
+      <div id="user-swatches" class="swatches custom-swatches">
+      </div>
+      <button id="add-swatch" class="button add-swatch">
+        <span id="color-indicator" class="color-indicator"></span><span>Add to Swatches</span>
+      </button>
+    </div>
+  </div>
+  
+  
+  <script src="js/w3color.js"></script>
+
+
+
+
+
+
+
+<style>
+  
+
+
+
+
+
+.componentsBox .content {
+    margin-bottom: 20px;
+}
+.m5 {
+    margin: 0 5px;
+}
+
+ .switch {
+     display: inline-block;
+}
+ .switch input {
+     display: none;
+}
+ .switch small {
+     display: inline-block;
+     width: 43px;
+     height: 18px;
+     background: #455a64;
+     border-radius: 30px;
+     position: relative;
+     cursor: pointer;
+}
+ .switch small:after {
+     content: "No";
+     position: absolute;
+     color: #fff;
+     font-size: 11px;
+     font-weight: 600;
+     width: 100%;
+     left: 0px;
+     text-align: right;
+     padding: 0 6px;
+     box-sizing: border-box;
+     line-height: 18px;
+}
+ .switch small:before {
+     content: "";
+     position: absolute;
+     width: 12px;
+     height: 12px;
+     background: #fff;
+     border-radius: 50%;
+     top: 3px;
+     left: 3px;
+     transition: .3s;
+     box-shadow: -3px 0 3px rgba(0,0,0,0.1);
+}
+ .switch input:checked ~ small {
+     background: #4fc5c5;
+     transition: .3s;
+}
+ .switch input:checked ~ small:before {
+     transform: translate(25px, 0px);
+     transition: .3s;
+}
+ .switch input:checked ~ small:after {
+     content: "Yes";
+     text-align: left;
+}
+
+</style>
 <script>
   let colorPicker1;
   let colorPicker2;
@@ -2455,11 +2698,7 @@ const defaultColor = "#0000ff";
 window.addEventListener("load", startup, false);
 
 function startup() {
-  colorPicker1 = document.querySelector("#color-picker1");
-  colorPicker1.value = defaultColor;
-  colorPicker1.addEventListener("input", updateFirstBG, false);
-  colorPicker1.addEventListener("change", updateFirstBG, false);
-  colorPicker1.select();
+ 
   colorPicker2 = document.querySelector("#color-picker2");
   colorPicker2.value = defaultColor;
   colorPicker2.addEventListener("input", updateFirstTxt, false);
