@@ -28,7 +28,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.1/tinycolor.min.js"></script>
 
   <script src="/js/anime.min.js"></script>
-	
+	<script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+<!-- Include the compiled JavaScript file (recording.js) -->
+
 <script type="text/javascript" src="/js/app.js"></script>
 
 
@@ -2559,6 +2563,22 @@ timeline16.pause();
             }
           }
         </script>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="camera">
+          <video id="video" style="width: 400px;" autoplay></video>
+          <div>
+            <button id="startRecord">Record</button>
+            <button id="stopRecord" disabled>Stop</button>
+          </div>
+          <div>
+            <h3>Recorded videos:</h3>
+            <div id="videoList"></div>
+          </div>
+        </div>
+        <script src="js/recording.js"></script>
       </td>
     </tr>
     
