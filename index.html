@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
 
-    <meta charset="utf-8">
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   
@@ -25,6 +25,8 @@
   <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/css/moving-letters.css"> 
   <link rel="stylesheet" href="css/dropdown.css">
+  <link rel="stylesheet" href="css/text-in.css">
+  <link rel="stylesheet" href="css/bg-select.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.1/tinycolor.min.js"></script>
 
   <script src="/js/anime.min.js"></script>
@@ -39,9 +41,9 @@
 
   <script type="text/javascript" src="/js/moving-letters.js"></script>
 </head>
-<body class="moving-letters" style="background: #dfe0e7;">
+<body class="moving-letters" style="background: hsl(233, 14%, 89%); margin: 0%;">
 
-	<div class="header" style="background-color: #11101D;">
+	<div class="header" id= 'header' style="background-color: #11101D; height: 2%; z-index: -5;">
     <canvas class="site-nav-canvas"></canvas>
   <button class="js-menu menu button-clear menu-white menu-movingLetters" aria-label="Site navigation">
     <span class="menu-icon-line-1 menu-icon-line" style="background-color: #ebebee;"></span>
@@ -76,2565 +78,3076 @@
     <h1 class="header-title" style="color: #ebebee;">Marketing Video Animation</h1>
     
   </div>
-
-
-
-<div class=" img-container" style="z-index: 20; position: fixed; width: 50%; height: 50%; display: grid; grid-template-columns: 1fr; text-align: center;">
-  <img class="img product-img" src="images/out.png" alt="" style="width: 20%; padding-top: 8%; margin: auto;">
-  <img class="img amazon-img" id="amazon" src="images/amazon-Light.png" alt="" style="width: 25%;  margin: auto; margin-left: 40%;">
-</div>
-
-
-<div class="compositions" style="position: fixed; width: 50%; height: 50%;">
-  
-	<div class="inner composition" id="comp1" style=" display: block; background-color: #9ba5b5 " >
+  <style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;width: 100%;height: 90%; }
+    .tg td{font-family:Arial, sans-serif;font-size:14px;
+      overflow:hidden;padding:7px 10px;word-break:normal;}
+    .tg th{font-family:Arial, sans-serif;font-size:14px;
+      font-weight:normal;overflow:hidden;padding:7px 10px;word-break:normal;}
+    .tg .tg-0pky{border-color:inherit;text-align:center;vertical-align:top}
+    .tg .tg-0lax{text-align:left;vertical-align:top}
+    </style>
     
-        <div class="innert composition-wrapper" data-color="9ba5b5">
-            <h1 class="ml1">
+    <table class="tg" table-layout="fixed">
+    <thead>
+      <tr style="height: 440px; width: 100%;">
+        <td class="tg-0pky" colspan="2" style="width: 50%;">
+         <div id="bg_div" style="z-index: 18; position: absolute; width: 50%; height: 50%;"></div>
+          <div class=" img-container" id="img-container" style="z-index: 20; position: absolute; width: 50%; height: 50%;cursor: none; display: grid; grid-template-columns: 1fr; text-align: center;">
+            <img class="img product-img" src="images/out.png" alt="" style="width: 20%; padding-top: 8%; margin: auto;">
+            <img class="img amazon-img" id="amazon" src="images/amazon-Light.png" alt="" style="width: 25%;  margin: auto; margin-left: 40%;">
+          </div>
+    
+          <div class="compositions" id="compositions"  style="z-index: 19; position: absolute; width: 50%; height: 50%;  ">
+      
+            <div class="inner composition" id="comp1" style=" display: block; background-color: #9ba5b5 " >
+              
+                  <div class="innert composition-wrapper" data-color="9ba5b5">
+                      <h1 class="ml1">
+                      <span class="text-wrapper">
+                          <span class="line line1 extraBG"></span>
+                          <span class="letters AdText target1" id = "ml1_letters-1">High Quality</span>
+                          <span class="line line2 extraBG"></span>
+                      </span>
+                      </h1>
+                      <h1 class="ml1 ">
+                        <span class="text-wrapper">
+                            <span class="line line1 extraBG"></span>
+                            <span class="letters AdText target2" id = "ml1_letters-2">Best offer</span>
+                            <span class="line line2 extraBG"></span>
+                        </span>
+                        </h1>
+                        <h1 class="ml1 ">
+                          <span class="text-wrapper">
+                              <span class="line line1 extraBG"></span>
+                              <span class="letters AdText target3" id = "ml1_letters-3">Don't Miss Out</span>
+                              <span class="line line2 extraBG"></span>
+                          </span>
+                          </h1>
+                          <h1 class="ml1 ">
+                            <span class="text-wrapper">
+                                <span class="line line1 extraBG "></span>
+                                <span class="letters AdText target4" id = "ml1_letters-4">Get It Now!</span>
+                                <span class="line line2 extraBG"></span>
+                            </span>
+                            </h1>
+          
+          <!--more-->
+          
+          <script>
+          // Wrap every letter in a span
+          
+          
+          
+          function initTimeline1(){
+            var textWrapper = document.getElementById('ml1_letters-1');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter a letter-1'>$&</span>");
+          
+          textWrapper = document.getElementById('ml1_letters-2');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
+          
+          textWrapper = document.getElementById('ml1_letters-3');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
+          textWrapper = document.getElementById('ml1_letters-4');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
+          
+          
+          var timeline1 = anime.timeline({autoplay:true, loop: true, 
+               
+            
+                
+            })
+            .add({
+              targets: '.ml1 .letter-1',
+              scale: [0.3,1],
+              opacity: [0,1],
+              translateZ: 0,
+              easing: "easeOutExpo",
+              duration: 600,
+              delay: (el, i) => 70 * (i+1),
+              
+            }).add({
+              targets: '.ml1 .line',
+              scaleX: [0,1],
+              opacity: [0.5,1],
+              easing: "easeOutExpo",
+              duration: 700,
+              offset: '-=875',
+              delay: (el, i, l) => 80 * (l - i)
+            }).add({
+              targets: '.ml1 .letter-1, .ml1 .line',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000,
+              
+              
+              
+            }).add({
+              targets: '.ml1 .letter-2',
+              scale: [0.3,1],
+              opacity: [0,1],
+              translateZ: 0,
+              easing: "easeOutExpo",
+              duration: 600,
+              delay: (el, i) => 70 * (i+1),
+              
+            }).add({
+              targets: '.ml1 .line',
+              scaleX: [0,1],
+              opacity: [0.5,1],
+              easing: "easeOutExpo",
+              duration: 700,
+              offset: '-=875',
+              delay: (el, i, l) => 80 * (l - i)
+            }).add({
+              targets: '.ml1 .letter-2,  .ml1 .line',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000,
+              
+              
+              
+            })  .add({
+              targets: '.ml1 .letter-3',
+              scale: [0.3,1],
+              opacity: [0,1],
+              translateZ: 0,
+              easing: "easeOutExpo",
+              duration: 600,
+              delay: (el, i) => 70 * (i+1),
+              
+            }).add({
+              targets: '.ml1 .line',
+              scaleX: [0,1],
+              opacity: [0.5,1],
+              easing: "easeOutExpo",
+              duration: 700,
+              offset: '-=875',
+              delay: (el, i, l) => 80 * (l - i)
+            }).add({
+              targets: '.ml1 .letter-3, .ml1 .line',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000,
+              
+              
+              
+            }).add({
+              targets: '.ml1 .letter-4',
+              scale: [0.3,1],
+              opacity: [0,1],
+              translateZ: 0,
+              easing: "easeOutExpo",
+              duration: 600,
+              delay: (el, i) => 70 * (i+1),
+              
+            }).add({
+              targets: '.ml1 .line',
+              scaleX: [0,1],
+              opacity: [0.5,1],
+              easing: "easeOutExpo",
+              duration: 700,
+              offset: '-=875',
+              delay: (el, i, l) => 80 * (l - i)
+            }).add({
+              targets: '.ml1 .letter-4,  .ml1 .line',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000,
+              
+              
+              
+            }).add({
+            targets:'.product-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 100,}
+          ).add({
+            targets:'.amazon-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000,
+          }).add({
+            targets:'img',
+            duration:1000,
+            opacity: [1,0],
+            easing: "easeOutExpo",
+              delay: 4000,
+            complete:  function stopEvent(){
+              
+              isRecording = false;
+              stopRecording();
+          document.getElementById("compositions").style.width = '50%'
+          document.getElementById("compositions").style.height = '50%'
+          document.getElementById("compositions").style.top = 'auto'
+          document.getElementById("compositions").style.left = 'auto'
+          document.getElementById("img-container").style.width = '50%'
+          document.getElementById("img-container").style.height = '50%'
+          document.getElementById("img-container").style.top = 'auto'
+          document.getElementById("img-container").style.left = 'auto'
+          document.getElementById("bg_div").style.width = '50%'
+          document.getElementById("bg_div").style.height = '50%'
+          document.getElementById("bg_div").style.top = 'auto'
+          document.getElementById("bg_div").style.left = 'auto'
+          document.getElementById("header").style.display = "block"
+          
+  startRecordBtn.disabled = false;
+  stopRecordBtn.disabled = true;
+           }
+          });
+          return timeline1;
+          }
+          
+          var timeline1 = initTimeline1()
+            
+          
+          
+          
+          
+                 
+                  
+          
+          
+          </script>
+          
+          <style>
+          
+          .ml1 {
+            font-weight: 900;
+            font-size: 3.5em;
+            
+          }
+          
+          .ml1 .letter {
+            display: inline-block;
+            line-height: 1em;
+          }
+          
+          .ml1 .text-wrapper {
+            position: relative;
+            display: inline-block;
+            padding-top: 0.1em;
+            padding-right: 0.05em;
+            padding-bottom: 0.15em;
+          }
+          
+          .ml1 .line {
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            height: 3px;
+            width: 100%;
+            background-color: #fff;
+            transform-origin: 0 0;
+          }
+          
+          .ml1 .line1 { top: 0; }
+          .ml1 .line2 { bottom: 0; }
+          </style>
+          
+          
+              </div>
+            </div>
+            
+            <div class="inner composition" id="comp2" style="background-color: #e8c3b9">
+              
+              <div class="innert composition-wrapper" data-color="e8c3b9">
+                <h1 class="ml2 AdText target1" id="ml2_letters-1" >High Quality</h1>
+                <h1 class="ml2 AdText target2" id="ml2_letters-2">Best offer</h1>
+                <h1 class="ml2 AdText target3" id="ml2_letters-3">Don't Miss Out</h1>
+                <h1 class="ml2 AdText target4" id="ml2_letters-4">Get It Now!</h1>
+                
+          
+          
+          <!--more-->
+          
+          <script>
+          
+          
+          function initTimeline2(){
+          
+          
+          // Wrap every letter in a span
+          var textWrapper = document.getElementById('ml2_letters-1');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
+          
+          textWrapper = document.getElementById('ml2_letters-2');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
+          
+          textWrapper = document.getElementById('ml2_letters-3');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
+          textWrapper = document.getElementById('ml2_letters-4');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
+          
+          var timeline2 = anime.timeline({autoplay:false, loop: true,
+             
+          
+              
+          })
+            .add({
+              targets: '.ml2 .letter-1',
+              scale: [4,1],
+              opacity: [0,1],
+              translateZ: 0,
+              easing: "easeOutExpo",
+              duration: 950,
+              delay: (el, i) => 70*i
+            }).add({
+              targets: '.ml2 .letter-1',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000,
+              
+            }).add({
+              targets: '.ml2 .letter-2',
+              scale: [4,1],
+              opacity: [0,1],
+              translateZ: 0,
+              easing: "easeOutExpo",
+              duration: 950,
+              delay: (el, i) => 70*i
+            }).add({
+              targets: '.ml2 .letter-2',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000,
+              
+            }).add({
+              targets: '.ml2 .letter-3',
+              scale: [4,1],
+              opacity: [0,1],
+              translateZ: 0,
+              easing: "easeOutExpo",
+              duration: 950,
+              delay: (el, i) => 70*i
+            }).add({
+              targets: '.ml2 .letter-3',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000,
+              
+            }).add({
+              targets: '.ml2 .letter-4',
+              scale: [4,1],
+              opacity: [0,1],
+              translateZ: 0,
+              easing: "easeOutExpo",
+              duration: 950,
+              delay: (el, i) => 70*i
+            }).add({
+              targets: '.ml2 .letter-4',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000,
+              
+            }).add({
+            targets:'.product-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 100,}
+          ).add({
+            targets:'.amazon-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000,
+          }).add({
+            targets:'img',
+            duration:1000,
+            opacity: [1,0],
+            easing: "easeOutExpo",
+              delay: 4000,
+              complete:  function stopEvent(){
+              
+              isRecording = false;
+              stopRecording();
+          document.getElementById("compositions").style.width = '50%'
+          document.getElementById("compositions").style.height = '50%'
+          document.getElementById("compositions").style.top = 'auto'
+          document.getElementById("compositions").style.left = 'auto'
+          document.getElementById("img-container").style.width = '50%'
+          document.getElementById("img-container").style.height = '50%'
+          document.getElementById("img-container").style.top = 'auto'
+          document.getElementById("img-container").style.left = 'auto'
+          document.getElementById("bg_div").style.width = '50%'
+          document.getElementById("bg_div").style.height = '50%'
+          document.getElementById("bg_div").style.top = 'auto'
+          document.getElementById("bg_div").style.left = 'auto'
+          document.getElementById("header").style.display = "block"
+          
+  startRecordBtn.disabled = false;
+  stopRecordBtn.disabled = true;
+           }
+          });
+          return timeline2;
+          }
+          
+          var timeline2 = initTimeline2()
+          </script>
+          
+          <style>
+          .ml2 {
+            font-weight: 900;
+            font-size: 3.5em;
+          }
+          
+          .ml2 .letter {
+            display: inline-block;
+            line-height: 1em;
+          }
+          </style>
+          
+          
+              </div>
+            </div>
+            
+            <div class="inner composition" id="comp3" style="background-color: #224a54">
+              
+              <div class="innert composition-wrapper" data-color="224a54">
+                <h1 class="ml3 tw1 AdText target1" id="ml3_letters-1" >High Quality</h1>
+                <h1 class="ml3 tw2 AdText target2" id="ml3_letters-2">Best offer</h1>
+                <h1 class="ml3 tw3 AdText target3" id="ml3_letters-3">Don't Miss Out</h1>
+                <h1 class="ml3 tw4 AdText target4" id="ml3_letters-4">Get It Now!</h1>
+          
+          <!--more-->
+          
+          <script>
+            function initTimeline3(){
+          // Wrap every letter in a span
+          var textWrapper = document.getElementById('ml3_letters-1');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
+          
+          textWrapper = document.getElementById('ml3_letters-2');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
+          
+          textWrapper = document.getElementById('ml3_letters-3');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
+          textWrapper = document.getElementById('ml3_letters-4');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
+          
+          
+          timeline3 = anime.timeline({loop: true,autoplay:false})
+            .add({
+              targets: '.ml3 .letter-1',
+              opacity: [0,1],
+              easing: "easeInOutQuad",
+              duration: 2250,
+              delay: (el, i) => 150 * (i+1)
+            }).add({
+              targets: '.tw1',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+              targets: '.ml3 .letter-2',
+              opacity: [0,1],
+              easing: "easeInOutQuad",
+              duration: 2250,
+              delay: (el, i) => 150 * (i+1)
+            }).add({
+              targets: '.tw2',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+              targets: '.ml3 .letter-3',
+              opacity: [0,1],
+              easing: "easeInOutQuad",
+              duration: 2250,
+              delay: (el, i) => 150 * (i+1)
+            }).add({
+              targets: '.tw3',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+              targets: '.ml3 .letter-4',
+              opacity: [0,1],
+              easing: "easeInOutQuad",
+              duration: 2250,
+              delay: (el, i) => 150 * (i+1)
+            }).add({
+              targets: '.tw4',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+            targets:'.product-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 100,}
+          ).add({
+            targets:'.amazon-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000,
+          }).add({
+            targets:'img',
+            duration:1000,
+            opacity: [1,0],
+            easing: "easeOutExpo",
+              delay: 4000,
+              complete:  function stopEvent(){
+              
+              isRecording = false;
+              stopRecording();
+          document.getElementById("compositions").style.width = '50%'
+          document.getElementById("compositions").style.height = '50%'
+          document.getElementById("compositions").style.top = 'auto'
+          document.getElementById("compositions").style.left = 'auto'
+          document.getElementById("img-container").style.width = '50%'
+          document.getElementById("img-container").style.height = '50%'
+          document.getElementById("img-container").style.top = 'auto'
+          document.getElementById("img-container").style.left = 'auto'
+          document.getElementById("bg_div").style.width = '50%'
+          document.getElementById("bg_div").style.height = '50%'
+          document.getElementById("bg_div").style.top = 'auto'
+          document.getElementById("bg_div").style.left = 'auto'
+          document.getElementById("header").style.display = "block"
+          
+  startRecordBtn.disabled = false;
+  stopRecordBtn.disabled = true;
+           }
+          });
+          return timeline3;
+          }
+          var timeline3 = initTimeline3();
+          </script>
+          
+          <style>
+          .ml3 {
+            font-weight: 900;
+            font-size: 3.5em;
+          }
+          </style>
+          
+          
+              </div>
+            </div>
+            
+            <div class="inner composition" id="comp4" style="background-color: #1a1a1a">
+              
+              <div class="innert composition-wrapper" data-color="1a1a1a">
+                <h1 class="ml4">
+            <span class="letters letters-1 AdText target1">High Quality</span>
+            <span class="letters letters-2 AdText target2">Best offer</span>
+            <span class="letters letters-3 AdText target3">Don't Miss Out</span>
+            <span class="letters letters-4 AdText target4">Get It Now!</span>
+          </h1>
+          
+          <!--more-->
+          
+          <script>
+            function initTimeline4(){
+          var ml4 = {};
+          ml4.opacityIn = [0,1];
+          ml4.scaleIn = [0.2, 1];
+          ml4.scaleOut = 3;
+          ml4.durationIn = 800;
+          ml4.durationOut = 600;
+          ml4.delay = 500;
+          
+          timeline4 = anime.timeline({loop: true,autoplay:false})
+            .add({
+              targets: '.ml4 .letters-1',
+              opacity: ml4.opacityIn,
+              scale: ml4.scaleIn,
+              duration: ml4.durationIn
+            }).add({
+              targets: '.ml4 .letters-1',
+              opacity: 0,
+              scale: ml4.scaleOut,
+              duration: ml4.durationOut,
+              easing: "easeInExpo",
+              delay: ml4.delay
+            }).add({
+              targets: '.ml4 .letters-2',
+              opacity: ml4.opacityIn,
+              scale: ml4.scaleIn,
+              duration: ml4.durationIn
+            }).add({
+              targets: '.ml4 .letters-2',
+              opacity: 0,
+              scale: ml4.scaleOut,
+              duration: ml4.durationOut,
+              easing: "easeInExpo",
+              delay: ml4.delay
+            }).add({
+              targets: '.ml4 .letters-3',
+              opacity: ml4.opacityIn,
+              scale: ml4.scaleIn,
+              duration: ml4.durationIn
+            }).add({
+              targets: '.ml4 .letters-3',
+              opacity: 0,
+              scale: ml4.scaleOut,
+              duration: ml4.durationOut,
+              easing: "easeInExpo",
+              delay: ml4.delay
+            }).add({
+              targets: '.ml4 .letters-4',
+              opacity: ml4.opacityIn,
+              scale: ml4.scaleIn,
+              duration: ml4.durationIn
+            }).add({
+              targets: '.ml4 .letters-4',
+              opacity: 0,
+              scale: ml4.scaleOut,
+              duration: ml4.durationOut,
+              easing: "easeInExpo",
+              delay: ml4.delay
+            }).add({
+              targets: '.ml4',
+              opacity: 0,
+              duration: 500,
+              delay: 500
+            }).add({
+            targets:'.product-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 100,}
+          ).add({
+            targets:'.amazon-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 100,
+          }).add({
+            targets:'img',
+            duration:1000,
+            opacity: [1,0],
+            easing: "easeOutExpo",
+              delay: 4000,
+              complete:  function stopEvent(){
+              
+              isRecording = false;
+              stopRecording();   
+          document.getElementById("compositions").style.width = '50%'
+          document.getElementById("compositions").style.height = '50%'
+          document.getElementById("compositions").style.top = 'auto'
+          document.getElementById("compositions").style.left = 'auto'
+          document.getElementById("img-container").style.width = '50%'
+          document.getElementById("img-container").style.height = '50%'
+          document.getElementById("img-container").style.top = 'auto'
+          document.getElementById("img-container").style.left = 'auto'
+          document.getElementById("bg_div").style.width = '50%'
+          document.getElementById("bg_div").style.height = '50%'
+          document.getElementById("bg_div").style.top = 'auto'
+          document.getElementById("bg_div").style.left = 'auto'
+          document.getElementById("header").style.display = "block"
+          
+  startRecordBtn.disabled = false;
+  stopRecordBtn.disabled = true;
+           }
+          });
+          return timeline4;
+          }
+          var timeline4 = initTimeline4();
+          </script>
+          
+          <style>
+          .ml4 {
+            position: relative;
+            font-weight: 900;
+            font-size: 4.5em;
+          }
+          .ml4 .letters {
+            position: absolute;
+            margin: auto;
+            left: 0;
+            top: 0.3em;
+            right: 0;
+            opacity: 0; 
+          }
+          </style>
+          
+          
+              </div>
+            </div>
+            
+            <div class="inner composition" id="comp5" style="background-color: #f3e9c6">
+              
+              <div class="innert composition-wrapper" data-color="f3e9c6">
+                <h1 class="ml5">
             <span class="text-wrapper">
-                <span class="line line1 extraBG"></span>
-                <span class="letters AdText target1" id = "ml1_letters-1">Noise Cancelling</span>
-                <span class="line line2 extraBG"></span>
+              <span class="line line1"></span>
+              <span class="letters letters-left">Signal</span>
+              <span class="letters ampersand">&amp;</span>
+              <span class="letters letters-right">Noise</span>
+              <span class="line line2"></span>
             </span>
-            </h1>
-            <h1 class="ml1 ">
-              <span class="text-wrapper">
-                  <span class="line line1 extraBG"></span>
-                  <span class="letters AdText target2" id = "ml1_letters-2">Comfortable</span>
-                  <span class="line line2 extraBG"></span>
-              </span>
-              </h1>
-              <h1 class="ml1 ">
-                <span class="text-wrapper">
-                    <span class="line line1 extraBG"></span>
-                    <span class="letters AdText target3" id = "ml1_letters-3">Bluetooth 5.0</span>
-                    <span class="line line2 extraBG"></span>
-                </span>
-                </h1>
-                <h1 class="ml1 ">
+          </h1>
+          
+          <!--more-->
+          
+          <script>
+            function initTimeline5(){
+          timeline5 = anime.timeline({loop: true})
+            .add({
+              targets: '.ml5 .line',
+              opacity: [0.5,1],
+              scaleX: [0, 1],
+              easing: "easeInOutExpo",
+              duration: 700
+            }).add({
+              targets: '.ml5 .line',
+              duration: 600,
+              easing: "easeOutExpo",
+              translateY: (el, i) => (-0.625 + 0.625*2*i) + "em"
+            }).add({
+              targets: '.ml5 .ampersand',
+              opacity: [0,1],
+              scaleY: [0.5, 1],
+              easing: "easeOutExpo",
+              duration: 600,
+              offset: '-=600'
+            }).add({
+              targets: '.ml5 .letters-left',
+              opacity: [0,1],
+              translateX: ["0.5em", 0],
+              easing: "easeOutExpo",
+              duration: 600,
+              offset: '-=300'
+            }).add({
+              targets: '.ml5 .letters-right',
+              opacity: [0,1],
+              translateX: ["-0.5em", 0],
+              easing: "easeOutExpo",
+              duration: 600,
+              offset: '-=600'
+            }).add({
+              targets: '.ml5',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000,
+              complete:  function stopEvent(){
+              
+              isRecording = false;
+              stopRecording();
+          document.getElementById("compositions").style.width = '50%'
+          document.getElementById("compositions").style.height = '50%'
+          document.getElementById("compositions").style.top = 'auto'
+          document.getElementById("compositions").style.left = 'auto'
+          document.getElementById("img-container").style.width = '50%'
+          document.getElementById("img-container").style.height = '50%'
+          document.getElementById("img-container").style.top = 'auto'
+          document.getElementById("img-container").style.left = 'auto'
+          document.getElementById("bg_div").style.width = '50%'
+          document.getElementById("bg_div").style.height = '50%'
+          document.getElementById("bg_div").style.top = 'auto'
+          document.getElementById("bg_div").style.left = 'auto'
+          document.getElementById("header").style.display = "block"
+          
+  startRecordBtn.disabled = false;
+  stopRecordBtn.disabled = true;
+           }
+            });
+            return timeline5;
+          }
+          var timeline5 = initTimeline5();
+          </script>
+          
+          <style>
+          .ml5 {
+            position: relative;
+            font-weight: 300;
+            font-size: 4.5em;
+            color: #402d2d;
+          }
+          
+          .ml5 .text-wrapper {
+            position: relative;
+            display: inline-block;
+            padding-top: 0.1em;
+            padding-right: 0.05em;
+            padding-bottom: 0.15em;
+            line-height: 1em;
+          }
+          
+          .ml5 .line {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            height: 3px;
+            width: 100%;
+            background-color: #402d2d;
+            transform-origin: 0.5 0;
+          }
+          
+          .ml5 .ampersand {
+            font-family: Baskerville, serif;
+            font-style: italic;
+            font-weight: 400;
+            width: 1em;
+            margin-right: -0.1em;
+            margin-left: -0.1em;
+          }
+          
+          .ml5 .letters {
+            display: inline-block;
+            opacity: 0;
+          }
+          </style>
+          
+          
+              </div>
+            </div>
+            
+            <div class="inner composition" id="comp6" style="background-color: #c1605c">
+              
+              <div class="innert composition-wrapper" data-color="c1605c">
+                <h1 class="ml6">
                   <span class="text-wrapper">
-                      <span class="line line1 extraBG "></span>
-                      <span class="letters AdText target4" id = "ml1_letters-4">Get It Now!</span>
-                      <span class="line line2 extraBG"></span>
+                     
+                      <span class="letters AdText target1" id = "ml6_letters-1">High Quality</span>
+                      
                   </span>
                   </h1>
-
-<!--more-->
-
-<script>
-// Wrap every letter in a span
-
-
-
-
-
-  
-
-
-var textWrapper = document.getElementById('ml1_letters-1');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
-
-textWrapper = document.getElementById('ml1_letters-2');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
-
-textWrapper = document.getElementById('ml1_letters-3');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
-textWrapper = document.getElementById('ml1_letters-4');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
-
-
-var timeline1 = anime.timeline({autoplay:true, loop: true, 
-     
-  
-      
-  })
-  .add({
-    targets: '.ml1 .letter-1',
-    scale: [0.3,1],
-    opacity: [0,1],
-    translateZ: 0,
-    easing: "easeOutExpo",
-    duration: 600,
-    delay: (el, i) => 70 * (i+1),
-    
-  }).add({
-    targets: '.ml1 .line',
-    scaleX: [0,1],
-    opacity: [0.5,1],
-    easing: "easeOutExpo",
-    duration: 700,
-    offset: '-=875',
-    delay: (el, i, l) => 80 * (l - i)
-  }).add({
-    targets: '.ml1 .letter-1, .ml1 .line',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000,
-    
-    
-    
-  }).add({
-    targets: '.ml1 .letter-2',
-    scale: [0.3,1],
-    opacity: [0,1],
-    translateZ: 0,
-    easing: "easeOutExpo",
-    duration: 600,
-    delay: (el, i) => 70 * (i+1),
-    
-  }).add({
-    targets: '.ml1 .line',
-    scaleX: [0,1],
-    opacity: [0.5,1],
-    easing: "easeOutExpo",
-    duration: 700,
-    offset: '-=875',
-    delay: (el, i, l) => 80 * (l - i)
-  }).add({
-    targets: '.ml1 .letter-2,  .ml1 .line',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000,
-    
-    
-    
-  })  .add({
-    targets: '.ml1 .letter-3',
-    scale: [0.3,1],
-    opacity: [0,1],
-    translateZ: 0,
-    easing: "easeOutExpo",
-    duration: 600,
-    delay: (el, i) => 70 * (i+1),
-    
-  }).add({
-    targets: '.ml1 .line',
-    scaleX: [0,1],
-    opacity: [0.5,1],
-    easing: "easeOutExpo",
-    duration: 700,
-    offset: '-=875',
-    delay: (el, i, l) => 80 * (l - i)
-  }).add({
-    targets: '.ml1 .letter-3, .ml1 .line',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000,
-    
-    
-    
-  }).add({
-    targets: '.ml1 .letter-4',
-    scale: [0.3,1],
-    opacity: [0,1],
-    translateZ: 0,
-    easing: "easeOutExpo",
-    duration: 600,
-    delay: (el, i) => 70 * (i+1),
-    
-  }).add({
-    targets: '.ml1 .line',
-    scaleX: [0,1],
-    opacity: [0.5,1],
-    easing: "easeOutExpo",
-    duration: 700,
-    offset: '-=875',
-    delay: (el, i, l) => 80 * (l - i)
-  }).add({
-    targets: '.ml1 .letter-4,  .ml1 .line',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000,
-    
-    
-    
-  }).add({
-  targets:'.product-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 100,}
-).add({
-  targets:'.amazon-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000,
-}).add({
-  targets:'img',
-  duration:1000,
-  opacity: [1,0],
-  easing: "easeOutExpo",
-    delay: 4000,
-});
-
-       
-        
-
-
-</script>
-
-<style>
-
-.ml1 {
-  font-weight: 900;
-  font-size: 3.5em;
-  
-}
-
-.ml1 .letter {
-  display: inline-block;
-  line-height: 1em;
-}
-
-.ml1 .text-wrapper {
-  position: relative;
-  display: inline-block;
-  padding-top: 0.1em;
-  padding-right: 0.05em;
-  padding-bottom: 0.15em;
-}
-
-.ml1 .line {
-  opacity: 0;
-  position: absolute;
-  left: 0;
-  height: 3px;
-  width: 100%;
-  background-color: #fff;
-  transform-origin: 0 0;
-}
-
-.ml1 .line1 { top: 0; }
-.ml1 .line2 { bottom: 0; }
-</style>
-
-
-    </div>
-	</div>
-  
-	<div class="inner composition" id="comp2" style="background-color: #e8c3b9">
-    
-    <div class="innert composition-wrapper" data-color="e8c3b9">
-      <h1 class="ml2 AdText target1" id="ml2_letters-1" >Great</h1>
-      <h1 class="ml2 AdText target2" id="ml2_letters-2">Awesome</h1>
-      <h1 class="ml2 AdText target3" id="ml2_letters-3">Unbelievable</h1>
-      <h1 class="ml2 AdText target4" id="ml2_letters-4">Get It Now!</h1>
-      
-
-
-<!--more-->
-
-<script>
-
-
-
-
-
-// Wrap every letter in a span
-var textWrapper = document.getElementById('ml2_letters-1');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
-
-textWrapper = document.getElementById('ml2_letters-2');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
-
-textWrapper = document.getElementById('ml2_letters-3');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
-textWrapper = document.getElementById('ml2_letters-4');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
-
-var timeline2 = anime.timeline({autoplay:false, loop: true,
-   
-
-    
-})
-  .add({
-    targets: '.ml2 .letter-1',
-    scale: [4,1],
-    opacity: [0,1],
-    translateZ: 0,
-    easing: "easeOutExpo",
-    duration: 950,
-    delay: (el, i) => 70*i
-  }).add({
-    targets: '.ml2 .letter-1',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000,
-    
-  }).add({
-    targets: '.ml2 .letter-2',
-    scale: [4,1],
-    opacity: [0,1],
-    translateZ: 0,
-    easing: "easeOutExpo",
-    duration: 950,
-    delay: (el, i) => 70*i
-  }).add({
-    targets: '.ml2 .letter-2',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000,
-    
-  }).add({
-    targets: '.ml2 .letter-3',
-    scale: [4,1],
-    opacity: [0,1],
-    translateZ: 0,
-    easing: "easeOutExpo",
-    duration: 950,
-    delay: (el, i) => 70*i
-  }).add({
-    targets: '.ml2 .letter-3',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000,
-    
-  }).add({
-    targets: '.ml2 .letter-4',
-    scale: [4,1],
-    opacity: [0,1],
-    translateZ: 0,
-    easing: "easeOutExpo",
-    duration: 950,
-    delay: (el, i) => 70*i
-  }).add({
-    targets: '.ml2 .letter-4',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000,
-    
-  }).add({
-  targets:'.product-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 100,}
-).add({
-  targets:'.amazon-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000,
-}).add({
-  targets:'img',
-  duration:1000,
-  opacity: [1,0],
-  easing: "easeOutExpo",
-    delay: 4000,
-});
-</script>
-
-<style>
-.ml2 {
-  font-weight: 900;
-  font-size: 3.5em;
-}
-
-.ml2 .letter {
-  display: inline-block;
-  line-height: 1em;
-}
-</style>
-
-
-    </div>
-	</div>
-  
-	<div class="inner composition" id="comp3" style="background-color: #224a54">
-    
-    <div class="innert composition-wrapper" data-color="224a54">
-      <h1 class="ml3 tw1 AdText target1" id="ml3_letters-1" >Great</h1>
-      <h1 class="ml3 tw2 AdText target2" id="ml3_letters-2">Awesome</h1>
-      <h1 class="ml3 tw3 AdText target3" id="ml3_letters-3">Unbelievable</h1>
-      <h1 class="ml3 tw4 AdText target4" id="ml3_letters-4">Get It Now!</h1>
-
-<!--more-->
-
-<script>
-// Wrap every letter in a span
-var textWrapper = document.getElementById('ml3_letters-1');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
-
-textWrapper = document.getElementById('ml3_letters-2');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
-
-textWrapper = document.getElementById('ml3_letters-3');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
-textWrapper = document.getElementById('ml3_letters-4');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
-
-
-timeline3 = anime.timeline({loop: true,autoplay:false})
-  .add({
-    targets: '.ml3 .letter-1',
-    opacity: [0,1],
-    easing: "easeInOutQuad",
-    duration: 2250,
-    delay: (el, i) => 150 * (i+1)
-  }).add({
-    targets: '.tw1',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-    targets: '.ml3 .letter-2',
-    opacity: [0,1],
-    easing: "easeInOutQuad",
-    duration: 2250,
-    delay: (el, i) => 150 * (i+1)
-  }).add({
-    targets: '.tw2',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-    targets: '.ml3 .letter-3',
-    opacity: [0,1],
-    easing: "easeInOutQuad",
-    duration: 2250,
-    delay: (el, i) => 150 * (i+1)
-  }).add({
-    targets: '.tw3',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-    targets: '.ml3 .letter-4',
-    opacity: [0,1],
-    easing: "easeInOutQuad",
-    duration: 2250,
-    delay: (el, i) => 150 * (i+1)
-  }).add({
-    targets: '.tw4',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-  targets:'.product-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 100,}
-).add({
-  targets:'.amazon-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000,
-}).add({
-  targets:'img',
-  duration:1000,
-  opacity: [1,0],
-  easing: "easeOutExpo",
-    delay: 4000,
-});
-</script>
-
-<style>
-.ml3 {
-  font-weight: 900;
-  font-size: 3.5em;
-}
-</style>
-
-
-    </div>
-	</div>
-  
-	<div class="inner composition" id="comp4" style="background-color: #1a1a1a">
-    
-    <div class="innert composition-wrapper" data-color="1a1a1a">
-      <h1 class="ml4">
-  <span class="letters letters-1 AdText target1">Noise Cancelling</span>
-  <span class="letters letters-2 AdText target2">Comfortable</span>
-  <span class="letters letters-3 AdText target3">Bluetooth 5.0</span>
-  <span class="letters letters-4 AdText target4">Get It Now!</span>
-</h1>
-
-<!--more-->
-
-<script>
-var ml4 = {};
-ml4.opacityIn = [0,1];
-ml4.scaleIn = [0.2, 1];
-ml4.scaleOut = 3;
-ml4.durationIn = 800;
-ml4.durationOut = 600;
-ml4.delay = 500;
-
-timeline4 = anime.timeline({loop: true,autoplay:false})
-  .add({
-    targets: '.ml4 .letters-1',
-    opacity: ml4.opacityIn,
-    scale: ml4.scaleIn,
-    duration: ml4.durationIn
-  }).add({
-    targets: '.ml4 .letters-1',
-    opacity: 0,
-    scale: ml4.scaleOut,
-    duration: ml4.durationOut,
-    easing: "easeInExpo",
-    delay: ml4.delay
-  }).add({
-    targets: '.ml4 .letters-2',
-    opacity: ml4.opacityIn,
-    scale: ml4.scaleIn,
-    duration: ml4.durationIn
-  }).add({
-    targets: '.ml4 .letters-2',
-    opacity: 0,
-    scale: ml4.scaleOut,
-    duration: ml4.durationOut,
-    easing: "easeInExpo",
-    delay: ml4.delay
-  }).add({
-    targets: '.ml4 .letters-3',
-    opacity: ml4.opacityIn,
-    scale: ml4.scaleIn,
-    duration: ml4.durationIn
-  }).add({
-    targets: '.ml4 .letters-3',
-    opacity: 0,
-    scale: ml4.scaleOut,
-    duration: ml4.durationOut,
-    easing: "easeInExpo",
-    delay: ml4.delay
-  }).add({
-    targets: '.ml4 .letters-4',
-    opacity: ml4.opacityIn,
-    scale: ml4.scaleIn,
-    duration: ml4.durationIn
-  }).add({
-    targets: '.ml4 .letters-4',
-    opacity: 0,
-    scale: ml4.scaleOut,
-    duration: ml4.durationOut,
-    easing: "easeInExpo",
-    delay: ml4.delay
-  }).add({
-    targets: '.ml4',
-    opacity: 0,
-    duration: 500,
-    delay: 500
-  }).add({
-  targets:'.product-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 100,}
-).add({
-  targets:'.amazon-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 100,
-}).add({
-  targets:'img',
-  duration:1000,
-  opacity: [1,0],
-  easing: "easeOutExpo",
-    delay: 4000,
-});
-</script>
-
-<style>
-.ml4 {
-  position: relative;
-  font-weight: 900;
-  font-size: 4.5em;
-}
-.ml4 .letters {
-  position: absolute;
-  margin: auto;
-  left: 0;
-  top: 0.3em;
-  right: 0;
-  opacity: 0; 
-}
-</style>
-
-
-    </div>
-	</div>
-  
-	<div class="inner composition" id="comp5" style="background-color: #f3e9c6">
-    
-    <div class="innert composition-wrapper" data-color="f3e9c6">
-      <h1 class="ml5">
-  <span class="text-wrapper">
-    <span class="line line1"></span>
-    <span class="letters letters-left">Signal</span>
-    <span class="letters ampersand">&amp;</span>
-    <span class="letters letters-right">Noise</span>
-    <span class="line line2"></span>
-  </span>
-</h1>
-
-<!--more-->
-
-<script>
-timeline5 = anime.timeline({loop: true})
-  .add({
-    targets: '.ml5 .line',
-    opacity: [0.5,1],
-    scaleX: [0, 1],
-    easing: "easeInOutExpo",
-    duration: 700
-  }).add({
-    targets: '.ml5 .line',
-    duration: 600,
-    easing: "easeOutExpo",
-    translateY: (el, i) => (-0.625 + 0.625*2*i) + "em"
-  }).add({
-    targets: '.ml5 .ampersand',
-    opacity: [0,1],
-    scaleY: [0.5, 1],
-    easing: "easeOutExpo",
-    duration: 600,
-    offset: '-=600'
-  }).add({
-    targets: '.ml5 .letters-left',
-    opacity: [0,1],
-    translateX: ["0.5em", 0],
-    easing: "easeOutExpo",
-    duration: 600,
-    offset: '-=300'
-  }).add({
-    targets: '.ml5 .letters-right',
-    opacity: [0,1],
-    translateX: ["-0.5em", 0],
-    easing: "easeOutExpo",
-    duration: 600,
-    offset: '-=600'
-  }).add({
-    targets: '.ml5',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  });
-</script>
-
-<style>
-.ml5 {
-  position: relative;
-  font-weight: 300;
-  font-size: 4.5em;
-  color: #402d2d;
-}
-
-.ml5 .text-wrapper {
-  position: relative;
-  display: inline-block;
-  padding-top: 0.1em;
-  padding-right: 0.05em;
-  padding-bottom: 0.15em;
-  line-height: 1em;
-}
-
-.ml5 .line {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  height: 3px;
-  width: 100%;
-  background-color: #402d2d;
-  transform-origin: 0.5 0;
-}
-
-.ml5 .ampersand {
-  font-family: Baskerville, serif;
-  font-style: italic;
-  font-weight: 400;
-  width: 1em;
-  margin-right: -0.1em;
-  margin-left: -0.1em;
-}
-
-.ml5 .letters {
-  display: inline-block;
-  opacity: 0;
-}
-</style>
-
-
-    </div>
-	</div>
-  
-	<div class="inner composition" id="comp6" style="background-color: #c1605c">
-    
-    <div class="innert composition-wrapper" data-color="c1605c">
-      <h1 class="ml6">
-        <span class="text-wrapper">
+                  <h1 class="ml6 ">
+                    <span class="text-wrapper">
+                        
+                        <span class="letters AdText target2" id = "ml6_letters-2">Best offer</span>
+                        
+                    </span>
+                    </h1>
+                    <h1 class="ml6 ">
+                      <span class="text-wrapper">
+                          
+                          <span class="letters AdText target3" id = "ml6_letters-3">Don't Miss Out</span>
+                          
+                      </span>
+                      </h1>
+                      <h1 class="ml6 ">
+                        <span class="text-wrapper">
+                            
+                            <span class="letters AdText target4" id = "ml6_letters-4">Get It Now!</span>
+                            
+                        </span>
+                        </h1>
+          
+          <!--more-->
+          
+          <script>
+            function initTimeline6(){
+          // Wrap every letter in a span
+          var textWrapper = document.getElementById('ml6_letters-1');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
+          
+          textWrapper = document.getElementById('ml6_letters-2');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
+          
+          textWrapper = document.getElementById('ml6_letters-3');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
+          textWrapper = document.getElementById('ml6_letters-4');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
+          
+          
+          var timeline6 = anime.timeline({autoplay:false, loop: true})
+            .add({
+              targets: '.ml6 .letter-1',
+              translateY: ["1.1em", 0],
+              translateZ: 0,
+              duration: 750,
+              delay: (el, i) => 50 * i
+            }).add({
+              targets: '.ml6 .letter-1',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+              targets: '.ml6 .letter-2',
+              translateY: ["1.1em", 0],
+              translateZ: 0,
+              duration: 750,
+              delay: (el, i) => 50 * i
+            }).add({
+              targets: '.ml6 .letter-2',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+              targets: '.ml6 .letter-3',
+              translateY: ["1.1em", 0],
+              translateZ: 0,
+              duration: 750,
+              delay: (el, i) => 50 * i
+            }).add({
+              targets: '.ml6 .letter-3',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+              targets: '.ml6 .letter-4',
+              translateY: ["1.1em", 0],
+              translateZ: 0,
+              duration: 750,
+              delay: (el, i) => 50 * i
+            }).add({
+              targets: '.ml6 .letter-4',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+            targets:'.product-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 100,}
+          ).add({
+            targets:'.amazon-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000,
+          }).add({
+            targets:'img',
+            duration:1000,
+            opacity: [1,0],
+            easing: "easeOutExpo",
+              delay: 4000,
+              complete:  function stopEvent(){
+              
+              isRecording = false;
+              stopRecording();
+          document.getElementById("compositions").style.width = '50%'
+          document.getElementById("compositions").style.height = '50%'
+          document.getElementById("compositions").style.top = 'auto'
+          document.getElementById("compositions").style.left = 'auto'
+          document.getElementById("img-container").style.width = '50%'
+          document.getElementById("img-container").style.height = '50%'
+          document.getElementById("img-container").style.top = 'auto'
+          document.getElementById("img-container").style.left = 'auto'
+          document.getElementById("header").style.display = "block"
+          document.getElementById("bg_div").style.width = '50%'
+          document.getElementById("bg_div").style.height = '50%'
+          document.getElementById("bg_div").style.top = 'auto'
+          document.getElementById("bg_div").style.left = 'auto'
            
-            <span class="letters AdText target1" id = "ml6_letters-1">Noise Cancelling</span>
-            
-        </span>
-        </h1>
-        <h1 class="ml6 ">
-          <span class="text-wrapper">
-              
-              <span class="letters AdText target2" id = "ml6_letters-2">Comfortable</span>
-              
-          </span>
-          </h1>
-          <h1 class="ml6 ">
-            <span class="text-wrapper">
-                
-                <span class="letters AdText target3" id = "ml6_letters-3">Bluetooth 5.0</span>
-                
-            </span>
-            </h1>
-            <h1 class="ml6 ">
-              <span class="text-wrapper">
-                  
-                  <span class="letters AdText target4" id = "ml6_letters-4">Get It Now!</span>
-                  
-              </span>
-              </h1>
-
-<!--more-->
-
-<script>
-// Wrap every letter in a span
-var textWrapper = document.getElementById('ml6_letters-1');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
-
-textWrapper = document.getElementById('ml6_letters-2');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
-
-textWrapper = document.getElementById('ml6_letters-3');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
-textWrapper = document.getElementById('ml6_letters-4');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
-
-
-var timeline6 = anime.timeline({autoplay:false, loop: true})
-  .add({
-    targets: '.ml6 .letter-1',
-    translateY: ["1.1em", 0],
-    translateZ: 0,
-    duration: 750,
-    delay: (el, i) => 50 * i
-  }).add({
-    targets: '.ml6 .letter-1',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-    targets: '.ml6 .letter-2',
-    translateY: ["1.1em", 0],
-    translateZ: 0,
-    duration: 750,
-    delay: (el, i) => 50 * i
-  }).add({
-    targets: '.ml6 .letter-2',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-    targets: '.ml6 .letter-3',
-    translateY: ["1.1em", 0],
-    translateZ: 0,
-    duration: 750,
-    delay: (el, i) => 50 * i
-  }).add({
-    targets: '.ml6 .letter-3',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-    targets: '.ml6 .letter-4',
-    translateY: ["1.1em", 0],
-    translateZ: 0,
-    duration: 750,
-    delay: (el, i) => 50 * i
-  }).add({
-    targets: '.ml6 .letter-4',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-  targets:'.product-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 100,}
-).add({
-  targets:'.amazon-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000,
-}).add({
-  targets:'img',
-  duration:1000,
-  opacity: [1,0],
-  easing: "easeOutExpo",
-    delay: 4000,
-});
-</script>
-
-<style>
-.ml6 {
-  position: relative;
-  font-weight: 900;
-  font-size: 3.3em;
-}
-
-.ml6 .text-wrapper {
-  position: relative;
-  display: inline-block;
-  padding-top: 0.2em;
-  padding-right: 0.05em;
-  padding-bottom: 0.1em;
-  overflow: hidden;
-}
-
-.ml6 .letter {
-  display: inline-block;
-  line-height: 1em;
-}
-</style>
-
-
-    </div>
-	</div>
-  
-	<div class="inner composition" id="comp7" style="background-color: #45383c">
-    
-    <div class="innert composition-wrapper" data-color="45383c">
-      <h1 class="ml7">
-        <span class="text-wrapper">
-           
-            <span class="letters AdText target1" id = "ml7_letters-1">Noise Cancelling</span>
-            
-        </span>
-        </h1>
-        <h1 class="ml7 ">
-          <span class="text-wrapper">
-              
-              <span class="letters AdText target2" id = "ml7_letters-2">Comfortable</span>
-              
-          </span>
-          </h1>
-          <h1 class="ml7 ">
-            <span class="text-wrapper">
-                
-                <span class="letters AdText target3" id = "ml7_letters-3">Bluetooth 5.0</span>
-                
-            </span>
-            </h1>
-            <h1 class="ml7 ">
-              <span class="text-wrapper">
-                  
-                  <span class="letters AdText target4" id = "ml7_letters-4">Get It Now!</span>
-                  
-              </span>
-              </h1>
-
-<!--more-->
-
-<script>
-// Wrap every letter in a span
-var textWrapper = document.getElementById('ml7_letters-1');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
-
-textWrapper = document.getElementById('ml7_letters-2');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
-
-textWrapper = document.getElementById('ml7_letters-3');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
-textWrapper = document.getElementById('ml7_letters-4');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
-
-
-timeline7 = anime.timeline({loop: true,autoplay:false})
-  .add({
-    targets: '.ml7 .letter-1',
-    translateY: ["1.1em", 0],
-    translateX: ["0.55em", 0],
-    translateZ: 0,
-    rotateZ: [180, 0],
-    duration: 750,
-    easing: "easeOutExpo",
-    delay: (el, i) => 50 * i
-  }).add({
-    targets: '.ml7 .letter-1',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-    targets: '.ml7 .letter-2',
-    translateY: ["1.1em", 0],
-    translateX: ["0.55em", 0],
-    translateZ: 0,
-    rotateZ: [180, 0],
-    duration: 750,
-    easing: "easeOutExpo",
-    delay: (el, i) => 50 * i
-  }).add({
-    targets: '.ml7 .letter-2',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-    targets: '.ml7 .letter-3',
-    translateY: ["1.1em", 0],
-    translateX: ["0.55em", 0],
-    translateZ: 0,
-    rotateZ: [180, 0],
-    duration: 750,
-    easing: "easeOutExpo",
-    delay: (el, i) => 50 * i
-  }).add({
-    targets: '.ml7 .letter-3',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-    targets: '.ml7 .letter-4',
-    translateY: ["1.1em", 0],
-    translateX: ["0.55em", 0],
-    translateZ: 0,
-    rotateZ: [180, 0],
-    duration: 750,
-    easing: "easeOutExpo",
-    delay: (el, i) => 50 * i
-  }).add({
-    targets: '.ml7 .letter-4',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-  targets:'.product-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 100,}
-).add({
-  targets:'.amazon-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000,
-}).add({
-  targets:'img',
-  duration:1000,
-  opacity: [1,0],
-  easing: "easeOutExpo",
-    delay: 4000,
-});
-</script>
-
-<style>
-.ml7 {
-  position: relative;
-  font-weight: 900;
-  font-size: 3.7em;
-}
-.ml7 .text-wrapper {
-  position: relative;
-  display: inline-block;
-  padding-top: 0.2em;
-  padding-right: 0.05em;
-  padding-bottom: 0.1em;
-  overflow: hidden;
-}
-.ml7 .letter {
-  transform-origin: 0 100%;
-  display: inline-block;
-  line-height: 1em;
-}
-</style>
-
-
-    </div>
-	</div>
-  
-	<div class="inner composition" id="comp8" style="background-color: #98bec8">
-    
-    <div class="innert composition-wrapper" data-color="98bec8">
-      <h1 class="ml8">
-  <span class="letters-container">
-    <span class="letters letters-left">Hi</span>
-    <span class="letters bang">!</span>
-  </span>
-  <span class="circle circle-white"></span>
-  <span class="circle circle-dark"></span>
-  <span class="circle circle-container"><span class="circle circle-dark-dashed"></span></span>
-</h1>
-
-<!--more-->
-
-<script>
-timeline8= anime.timeline({loop: true})
-  .add({
-    targets: '.ml8 .circle-white',
-    scale: [0, 3],
-    opacity: [1, 0],
-    easing: "easeInOutExpo",
-    rotateZ: 360,
-    duration: 1100
-  }).add({
-    targets: '.ml8 .circle-container',
-    scale: [0, 1],
-    duration: 1100,
-    easing: "easeInOutExpo",
-    offset: '-=1000'
-  }).add({
-    targets: '.ml8 .circle-dark',
-    scale: [0, 1],
-    duration: 1100,
-    easing: "easeOutExpo",
-    offset: '-=600'
-  }).add({
-    targets: '.ml8 .letters-left',
-    scale: [0, 1],
-    duration: 1200,
-    offset: '-=550'
-  }).add({
-    targets: '.ml8 .bang',
-    scale: [0, 1],
-    rotateZ: [45, 15],
-    duration: 1200,
-    offset: '-=1000'
-  }).add({
-    targets: '.ml8',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1400
-  });
-
-anime({
-  targets: '.ml8 .circle-dark-dashed',
-  rotateZ: 360,
-  duration: 8000,
-  easing: "linear",
-  loop: true
-});
-</script>
-
-<style>
-h1.ml8 {
-  font-weight: 900;
-  font-size: 4.5em;
-  color: #fff;
-  width: 3em;
-  height: 3em;
-}
-
-.ml8 .letters-container {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  height: 1em;
-}
-
-.ml8 .letters {
-  position: relative;
-  z-index: 2;
-  display: inline-block;
-  line-height: 0.7em;
-  right: -0.12em;
-  top: -0.2em;
-}
-
-.ml8 .bang {
-  font-size: 1.4em;
-  top: auto;
-  left: -0.06em;
-}
-
-.ml8 .circle {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-}
-
-.ml8 .circle-white {
-  width: 3em;
-  height: 3em;
-  border: 2px dashed white;
-  border-radius: 2em;
-}
-
-.ml8 .circle-dark {
-  width: 2.2em;
-  height: 2.2em;
-  background-color: #4f7b86;
-  border-radius: 3em;
-  z-index: 1;
-}
-
-.ml8 .circle-dark-dashed {
-  border-radius: 2.4em;
-  background-color: transparent;
-  border: 2px dashed #4f7b86;
-  width: 2.3em;
-  height: 2.3em;
-}
-</style>
-
-
-    </div>
-	</div>
-  
-	<div class="inner composition" id="comp9" style="background-color: #1a1a1a">
-   
-    <div class="innert composition-wrapper" data-color="1a1a1a">
-      <h1 class="ml9">
-        <span class="text-wrapper">
-           
-            <span class="letters AdText target1" id = "ml9_letters-1">Noise Cancelling</span>
-            
-        </span>
-        </h1>
-        <h1 class="ml9 ">
-          <span class="text-wrapper">
-              
-              <span class="letters AdText target2" id = "ml9_letters-2">Comfortable</span>
-              
-          </span>
-          </h1>
-          <h1 class="ml9 ">
-            <span class="text-wrapper">
-                
-                <span class="letters AdText target3" id = "ml9_letters-3">Bluetooth 5.0</span>
-                
-            </span>
-            </h1>
-            <h1 class="ml9 ">
-              <span class="text-wrapper">
-                  
-                  <span class="letters AdText target4" id = "ml9_letters-4">Get It Now!</span>
-                  
-              </span>
-              </h1>
-
-<!--more-->
-
-<script>
-// Wrap every letter in a span
-var textWrapper = document.getElementById('ml9_letters-1');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
-
-textWrapper = document.getElementById('ml9_letters-2');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
-
-textWrapper = document.getElementById('ml9_letters-3');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
-textWrapper = document.getElementById('ml9_letters-4');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
-
-timeline9 = anime.timeline({loop: true,autoplay:false})
-  .add({
-    targets: '.ml9 .letter-1',
-    scale: [0, 1],
-    duration: 1500,
-    elasticity: 600,
-    delay: (el, i) => 45 * (i+1)
-  }).add({
-    targets: '.ml9 .letter-1',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-    targets: '.ml9 .letter-2',
-    scale: [0, 1],
-    duration: 1500,
-    elasticity: 600,
-    delay: (el, i) => 45 * (i+1)
-  }).add({
-    targets: '.ml9 .letter-2',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  })  .add({
-    targets: '.ml9 .letter-3',
-    scale: [0, 1],
-    duration: 1500,
-    elasticity: 600,
-    delay: (el, i) => 45 * (i+1)
-  }).add({
-    targets: '.ml9 .letter-3',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-    targets: '.ml9 .letter-4',
-    scale: [0, 1],
-    duration: 1500,
-    elasticity: 600,
-    delay: (el, i) => 45 * (i+1)
-  }).add({
-    targets: '.ml9 .letter-4',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-  targets:'.product-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 100,}
-).add({
-  targets:'.amazon-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000,
-}).add({
-  targets:'img',
-  duration:1000,
-  opacity: [1,0],
-  easing: "easeOutExpo",
-    delay: 4000,
-});
-</script>
-
-<style>
-.ml9 {
-  position: relative;
-  font-weight: 200;
-  font-size: 4em;
-}
-
-.ml9 .text-wrapper {
-  position: relative;
-  display: inline-block;
-  padding-top: 0.2em;
-  padding-right: 0.05em;
-  padding-bottom: 0.1em;
-  overflow: hidden;
-}
-
-.ml9 .letter {
-  transform-origin: 50% 100%;
-  display: inline-block;
-  line-height: 1em;
-}
-</style>
-
-
-    </div>
-	</div>
-  
-	<div class="inner composition" id="comp10" style="background-color: #224a54">
-    
-    <div class="innert composition-wrapper" data-color="224a54">
-      <h1 class="ml10">
-        <span class="text-wrapper">
-           
-            <span class="letters AdText target1" id = "ml10_letters-1">Noise Cancelling</span>
-            
-        </span>
-        </h1>
-        <h1 class="ml10 ">
-          <span class="text-wrapper">
-              
-              <span class="letters AdText target2" id = "ml10_letters-2">Comfortable</span>
-              
-          </span>
-          </h1>
-          <h1 class="ml10 ">
-            <span class="text-wrapper">
-                
-                <span class="letters AdText target3" id = "ml10_letters-3">Bluetooth 5.0</span>
-                
-            </span>
-            </h1>
-            <h1 class="ml10 ">
-              <span class="text-wrapper">
-                  
-                  <span class="letters AdText target4" id = "ml10_letters-4">Get It Now!</span>
-                  
-              </span>
-              </h1>
-
-<!--more-->
-
-<script>
-// Wrap every letter in a span
-var textWrapper = document.getElementById('ml10_letters-1');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
-
-textWrapper = document.getElementById('ml10_letters-2');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
-
-textWrapper = document.getElementById('ml10_letters-3');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
-textWrapper = document.getElementById('ml10_letters-4');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
-
-
-timeline10 = anime.timeline({loop: true, autoplay:false})
-  .add({
-    targets: '.ml10 .letter-1',
-    rotateY: [-90, 0],
-    duration: 1300,
-    delay: (el, i) => 45 * i
-  }).add({
-    targets: '.ml10 .letter-1',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-    targets: '.ml10 .letter-2',
-    rotateY: [-90, 0],
-    duration: 1300,
-    delay: (el, i) => 45 * i
-  }).add({
-    targets: '.ml10 .letter-2',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }) .add({
-    targets: '.ml10 .letter-3',
-    rotateY: [-90, 0],
-    duration: 1300,
-    delay: (el, i) => 45 * i
-  }).add({
-    targets: '.ml10 .letter-3',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-    targets: '.ml10 .letter-4',
-    rotateY: [-90, 0],
-    duration: 1300,
-    delay: (el, i) => 45 * i
-  }).add({
-    targets: '.ml10 .letter-4',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-  targets:'.product-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 100,}
-).add({
-  targets:'.amazon-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000,
-}).add({
-  targets:'img',
-  duration:1000,
-  opacity: [1,0],
-  easing: "easeOutExpo",
-    delay: 4000,
-});
-</script>
-
-<style>
-.ml10 {
-  position: relative;
-  font-weight: 900;
-  font-size: 4em;
-}
-
-.ml10 .text-wrapper {
-  position: relative;
-  display: inline-block;
-  padding-top: 0.2em;
-  padding-right: 0.05em;
-  padding-bottom: 0.1em;
-  overflow: hidden;
-}
-
-.ml10 .letter {
-  display: inline-block;
-  line-height: 1em;
-  transform-origin: 0 0;
-}
-</style>
-
-
-    </div>
-	</div>
-  
-	<div class="inner composition" id="comp11" style="background-color: #e8c3b9">
-    
-    <div class="innert composition-wrapper" data-color="e8c3b9">
-      <h1 class="ml11">
-  <span class="text-wrapper">
-    <span class="line line1 extraBG"></span>
-    <span class="letters AdText target1" id = "ml11_letters-1">Noise Cancelling</span>
-  </span>
-</h1>
-<h1 class="ml11">
-  <span class="text-wrapper">
-    <span class="line line2 extraBG"></span>
-    <span class="letters AdText target2" id = "ml11_letters-2">Comfortable</span>
-  </span>
-</h1>
-<h1 class="ml11">
-  <span class="text-wrapper">
-    <span class="line line3 extraBG"></span>
-    <span class="letters AdText target3" id = "ml11_letters-3">Bluetooth 5.0</span>
-  </span>
-</h1>
-<h1 class="ml11">
-  <span class="text-wrapper">
-    <span class="line line4 extraBG"></span>
-    <span class="letters AdText target4" id = "ml11_letters-4">Get It Now!</span>
-  </span>
-</h1>
-
-<!--more-->
-
-<style>
-.ml11 {
-  font-weight: 700;
-  font-size: 3.5em;
-}
-
-.ml11 .text-wrapper {
-  position: relative;
-  display: inline-block;
-  padding-top: 0.1em;
-  padding-right: 0.05em;
-  padding-bottom: 0.15em;
-}
-
-.ml11 .line {
-  opacity: 0;
-  position: absolute;
-  left: 0;
-  height: 100%;
-  width: 3px;
-  background-color: #fff;
-  transform-origin: 0 50%;
-}
-
-.ml11 .line1 { 
-  top: 0; 
-  left: 0;
-}
-
-.ml11 .letter {
-  display: inline-block;
-  line-height: 1em;
-}
-</style>
-
-<script>
-// Wrap every letter in a span
-var textWrapper = document.getElementById('ml11_letters-1');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
-
-textWrapper = document.getElementById('ml11_letters-2');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
-
-textWrapper = document.getElementById('ml11_letters-3');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
-textWrapper = document.getElementById('ml11_letters-4');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
-timeline11 = anime.timeline({loop: true,autoplay:false})
-  .add({
-    targets: '.ml11 .line1',
-    scaleY: [0,1],
-    opacity: [0.5,1],
-    easing: "easeOutExpo",
-    duration: 700
-  })
-  .add({
-    targets: '.ml11 .line1',
-    translateX: [0, document.getElementById('ml11_letters-1').getBoundingClientRect().width + 10],
-    easing: "easeOutExpo",
-    duration: 700,
-    delay: 100
-  }).add({
-    targets: '.ml11 .letter-1',
-    opacity: [0,1],
-    easing: "easeOutExpo",
-    duration: 600,
-    offset: '-=775',
-    delay: (el, i) => 34 * (i+1)
-  }).add({
-    targets: '.ml11 .letter-1 , .ml11 .line1',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-    targets: '.ml11 .line2',
-    scaleY: [0,1],
-    opacity: [0.5,1],
-    easing: "easeOutExpo",
-    duration: 700
-  })
-  .add({
-    targets: '.ml11 .line2',
-    translateX: [0, document.getElementById('ml11_letters-2').getBoundingClientRect().width + 10],
-    easing: "easeOutExpo",
-    duration: 700,
-    delay: 100
-  }).add({
-    targets: '.ml11 .letter-2',
-    opacity: [0,1],
-    easing: "easeOutExpo",
-    duration: 600,
-    offset: '-=775',
-    delay: (el, i) => 34 * (i+1)
-  }).add({
-    targets: '.ml11 .letter-2, .ml11 .line2',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  })  .add({
-    targets: '.ml11 .line3',
-    scaleY: [0,1],
-    opacity: [0.5,1],
-    easing: "easeOutExpo",
-    duration: 700
-  })
-  .add({
-    targets: '.ml11 .line3',
-    translateX: [0, document.getElementById('ml11_letters-3').getBoundingClientRect().width + 10],
-    easing: "easeOutExpo",
-    duration: 700,
-    delay: 100
-  }).add({
-    targets: '.ml11 .letter-3',
-    opacity: [0,1],
-    easing: "easeOutExpo",
-    duration: 600,
-    offset: '-=775',
-    delay: (el, i) => 34 * (i+1)
-  }).add({
-    targets: '.ml11 .letter-3 , .ml11 .line3',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-    targets: '.ml11 .line4',
-    scaleY: [0,1],
-    opacity: [0.5,1],
-    easing: "easeOutExpo",
-    duration: 700
-  })
-  .add({
-    targets: '.ml11 .line4',
-    translateX: [0, document.getElementById('ml11_letters-4').getBoundingClientRect().width + 10],
-    easing: "easeOutExpo",
-    duration: 700,
-    delay: 100
-  }).add({
-    targets: '.ml11 .letter-4',
-    opacity: [0,1],
-    easing: "easeOutExpo",
-    duration: 600,
-    offset: '-=775',
-    delay: (el, i) => 34 * (i+1)
-  }).add({
-    targets: '.ml11 .letter-4, .ml11 .line4',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-  targets:'.product-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 100,}
-).add({
-  targets:'.amazon-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000,
-}).add({
-  targets:'img',
-  duration:1000,
-  opacity: [1,0],
-  easing: "easeOutExpo",
-    delay: 4000,
-});
-</script>
-
-
-    </div>
-	</div>
-  
-	<div class="inner composition" id="comp12" style="background-color: #9ba5b5">
-    
-    <div class="innert composition-wrapper" data-color="9ba5b5">
-      <h1 class="ml12 AdText target1" id="ml12_letters-1" >Great</h1>
-      <h1 class="ml12 AdText target2" id="ml12_letters-2">Awesome</h1>
-      <h1 class="ml12 AdText target3" id="ml12_letters-3">Unbelievable</h1>
-      <h1 class="ml12 AdText target3" id="ml12_letters-4">Get It Now!</h1>
-
-<!--more-->
-
-<script>
-// Wrap every letter in a span
-var textWrapper = document.getElementById('ml12_letters-1');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
-
-textWrapper = document.getElementById('ml12_letters-2');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
-
-textWrapper = document.getElementById('ml12_letters-3');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
-textWrapper = document.getElementById('ml12_letters-4');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
-
-timeline12 = anime.timeline({loop: true, autoplay:false})
-  .add({
-    targets: '.ml12 .letter-1',
-    translateX: [40,0],
-    translateZ: 0,
-    opacity: [0,1],
-    easing: "easeOutExpo",
-    duration: 1200,
-    delay: (el, i) => 500 + 30 * i
-  }).add({
-    targets: '.ml12 .letter-1',
-    translateX: [0,-30],
-    opacity: [1,0],
-    easing: "easeInExpo",
-    duration: 1100,
-    delay: (el, i) => 100 + 30 * i
-  })  .add({
-    targets: '.ml12 .letter-2',
-    translateX: [40,0],
-    translateZ: 0,
-    opacity: [0,1],
-    easing: "easeOutExpo",
-    duration: 1200,
-    delay: (el, i) => 500 + 30 * i
-  }).add({
-    targets: '.ml12 .letter-2',
-    translateX: [0,-30],
-    opacity: [1,0],
-    easing: "easeInExpo",
-    duration: 1100,
-    delay: (el, i) => 100 + 30 * i
-  })  .add({
-    targets: '.ml12 .letter-3',
-    translateX: [40,0],
-    translateZ: 0,
-    opacity: [0,1],
-    easing: "easeOutExpo",
-    duration: 1200,
-    delay: (el, i) => 500 + 30 * i
-  }).add({
-    targets: '.ml12 .letter-3',
-    translateX: [0,-30],
-    opacity: [1,0],
-    easing: "easeInExpo",
-    duration: 1100,
-    delay: (el, i) => 100 + 30 * i
-  })  .add({
-    targets: '.ml12 .letter-4',
-    translateX: [40,0],
-    translateZ: 0,
-    opacity: [0,1],
-    easing: "easeOutExpo",
-    duration: 1200,
-    delay: (el, i) => 500 + 30 * i
-  }).add({
-    targets: '.ml12 .letter-4',
-    translateX: [0,-30],
-    opacity: [1,0],
-    easing: "easeInExpo",
-    duration: 1100,
-    delay: (el, i) => 100 + 30 * i
-  }).add({
-  targets:'.product-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 100,}
-).add({
-  targets:'.amazon-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000,
-}).add({
-  targets:'img',
-  duration:1000,
-  opacity: [1,0],
-  easing: "easeOutExpo",
-    delay: 4000,
-});
-</script>
-
-<style>
-.ml12 {
-  font-weight: 200;
-  font-size: 1.8em;
-  text-transform: uppercase;
-  letter-spacing: 0.5em;
-}
-
-.ml12 .letter {
-  display: inline-block;
-  line-height: 1em;
-}
-</style>
-
-
-    </div>
-	</div>
-  
-	<div class="inner composition" id="comp13" style="background-color: #98bec8">
-    
-    <div class="innert composition-wrapper" data-color="98bec8">
-      <h1 class="ml13 AdText target1" id="ml13_letters-1" >Great</h1>
-      <h1 class="ml13 AdText target2" id="ml13_letters-2">Awesome</h1>
-      <h1 class="ml13 AdText target3" id="ml13_letters-3">Unbelievable</h1>
-      <h1 class="ml13 AdText target4" id="ml13_letters-4">Get It Now!</h1>
-
-<!--more-->
-
-<script>
-// Wrap every letter in a span
-var textWrapper = document.getElementById('ml13_letters-1');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
-
-textWrapper = document.getElementById('ml13_letters-2');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
-
-textWrapper = document.getElementById('ml13_letters-3');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
-textWrapper = document.getElementById('ml13_letters-4');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
-
-
-timeline13 = anime.timeline({loop: true, autoplay:false})
-  .add({
-    targets: '.ml13 .letter-1',
-    translateY: [100,0],
-    translateZ: 0,
-    opacity: [0,1],
-    easing: "easeOutExpo",
-    duration: 1400,
-    delay: (el, i) => 300 + 30 * i
-  }).add({
-    targets: '.ml13 .letter-1',
-    translateY: [0,-100],
-    opacity: [1,0],
-    easing: "easeInExpo",
-    duration: 1200,
-    delay: (el, i) => 100 + 30 * i
-  })  .add({
-    targets: '.ml13 .letter-2',
-    translateY: [100,0],
-    translateZ: 0,
-    opacity: [0,1],
-    easing: "easeOutExpo",
-    duration: 1400,
-    delay: (el, i) => 300 + 30 * i
-  }).add({
-    targets: '.ml13 .letter-2',
-    translateY: [0,-100],
-    opacity: [1,0],
-    easing: "easeInExpo",
-    duration: 1200,
-    delay: (el, i) => 100 + 30 * i
-  })  .add({
-    targets: '.ml13 .letter-3',
-    translateY: [100,0],
-    translateZ: 0,
-    opacity: [0,1],
-    easing: "easeOutExpo",
-    duration: 1400,
-    delay: (el, i) => 300 + 30 * i
-  }).add({
-    targets: '.ml13 .letter-3',
-    translateY: [0,-100],
-    opacity: [1,0],
-    easing: "easeInExpo",
-    duration: 1200,
-    delay: (el, i) => 100 + 30 * i
-  })  .add({
-    targets: '.ml13 .letter-4',
-    translateY: [100,0],
-    translateZ: 0,
-    opacity: [0,1],
-    easing: "easeOutExpo",
-    duration: 1400,
-    delay: (el, i) => 300 + 30 * i
-  }).add({
-    targets: '.ml13 .letter-4',
-    translateY: [0,-100],
-    opacity: [1,0],
-    easing: "easeInExpo",
-    duration: 1200,
-    delay: (el, i) => 100 + 30 * i
-  }).add({
-  targets:'.product-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 100,}
-).add({
-  targets:'.amazon-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000,
-}).add({
-  targets:'img',
-  duration:1000,
-  opacity: [1,0],
-  easing: "easeOutExpo",
-    delay: 4000,
-});
-</script>
-
-<style>
-.ml13 {
-  font-size: 1.9em;
-  text-transform: uppercase;
-  letter-spacing: 0.5em;
-  font-weight: 600;
-}
-
-.ml13 .letter {
-  display: inline-block;
-  line-height: 1em;
-}
-</style>
-
-
-    </div>
-	</div>
-  
-	<div class="inner composition" id="comp14" style="background-color: #45383c">
-    
-    <div class="innert composition-wrapper" data-color="45383c">
-      <h1 class="ml14">
-  <span class="text-wrapper">
-    <span class="letters AdText target1" id="ml14_letters-1">Noise Cancelling</span>
-    <span class="line line1 extraBG"></span>
-  </span>
-</h1>
-<h1 class="ml14">
-  <span class="text-wrapper">
-    <span class="letters AdText target2" id="ml14_letters-2">Comfortable</span>
-    <span class="line line2 extraBG"></span>
-  </span>
-</h1>
-<h1 class="ml14">
-  <span class="text-wrapper">
-    <span class="letters AdText target3" id="ml14_letters-3">Bluetooth 5.0</span>
-    <span class="line line3 extraBG"></span>
-  </span>
-</h1>
-<h1 class="ml14">
-  <span class="text-wrapper">
-    <span class="letters AdText target4" id="ml14_letters-4">Get It Now!</span>
-    <span class="line line4 extraBG"></span>
-  </span>
-</h1>
-
-<!--more-->
-
-<script>
-// Wrap every letter in a span
-var textWrapper = document.getElementById('ml14_letters-1');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
-
-textWrapper = document.getElementById('ml14_letters-2');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
-
-textWrapper = document.getElementById('ml14_letters-3');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
-textWrapper = document.getElementById('ml14_letters-4');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
-
-timeline14 = anime.timeline({loop: true,autoplay:false})
-  .add({
-    targets: '.ml14 .line1',
-    scaleX: [0,1],
-    opacity: [0.5,1],
-    easing: "easeInOutExpo",
-    duration: 900
-  }).add({
-    targets: '.ml14 .letter-1',
-    opacity: [0,1],
-    translateX: [40,0],
-    translateZ: 0,
-    scaleX: [0.3, 1],
-    easing: "easeOutExpo",
-    duration: 800,
-    offset: '-=600',
-    delay: (el, i) => 150 + 25 * i
-  }).add({
-    targets: '.ml14 .letter-1 , .ml14 .line1',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-    targets: '.ml14 .line2',
-    scaleX: [0,1],
-    opacity: [0.5,1],
-    easing: "easeInOutExpo",
-    duration: 900
-  }).add({
-    targets: '.ml14 .letter-2',
-    opacity: [0,1],
-    translateX: [40,0],
-    translateZ: 0,
-    scaleX: [0.3, 1],
-    easing: "easeOutExpo",
-    duration: 800,
-    offset: '-=600',
-    delay: (el, i) => 150 + 25 * i
-  }).add({
-    targets: '.ml14 .letter-2 , .ml14 .line2',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  })  .add({
-    targets: '.ml14 .line3',
-    scaleX: [0,1],
-    opacity: [0.5,1],
-    easing: "easeInOutExpo",
-    duration: 900
-  }).add({
-    targets: '.ml14 .letter-3',
-    opacity: [0,1],
-    translateX: [40,0],
-    translateZ: 0,
-    scaleX: [0.3, 1],
-    easing: "easeOutExpo",
-    duration: 800,
-    offset: '-=600',
-    delay: (el, i) => 150 + 25 * i
-  }).add({
-    targets: '.ml14 .letter-3 , .ml14 .line3',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-    targets: '.ml14 .line4',
-    scaleX: [0,1],
-    opacity: [0.5,1],
-    easing: "easeInOutExpo",
-    duration: 900
-  }).add({
-    targets: '.ml14 .letter-4',
-    opacity: [0,1],
-    translateX: [40,0],
-    translateZ: 0,
-    scaleX: [0.3, 1],
-    easing: "easeOutExpo",
-    duration: 800,
-    offset: '-=600',
-    delay: (el, i) => 150 + 25 * i
-  }).add({
-    targets: '.ml14 .letter-4 , .ml14 .line4',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-  targets:'.product-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 100,}
-).add({
-  targets:'.amazon-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000,
-}).add({
-  targets:'img',
-  duration:1000,
-  opacity: [1,0],
-  easing: "easeOutExpo",
-    delay: 4000,
-});
-</script>
-
-<style>
-.ml14 {
-  font-weight: 200;
-  font-size: 3.2em;
-}
-
-.ml14 .text-wrapper {
-  position: relative;
-  display: inline-block;
-  padding-top: 0.1em;
-  padding-right: 0.05em;
-  padding-bottom: 0.15em;
-}
-
-.ml14 .line {
-  opacity: 0;
-  position: absolute;
-  left: 0;
-  height: 2px;
-  width: 100%;
-  background-color: #fff;
-  transform-origin: 100% 100%;
-  bottom: 0;
-}
-
-.ml14 .letter {
-  display: inline-block;
-  line-height: 1em;
-}
-</style>
-
-
-    </div>
-	</div>
-  
-	<div class="inner composition" id="comp15" style="background-color: #c1605c">
-  
-    <div class="innert composition-wrapper" data-color="c1605c">
-      <h1 class="ml15">
-  <span class="word">Out</span>
-  <span class="word">now</span>
-</h1>
-
-<!--more-->
-
-<script>
-timeline15 = anime.timeline({loop: true})
-  .add({
-    targets: '.ml15 .word',
-    scale: [14,1],
-    opacity: [0,1],
-    easing: "easeOutCirc",
-    duration: 800,
-    delay: (el, i) => 800 * i
-  }).add({
-    targets: '.ml15',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  });
-</script>
-
-<style>
-.ml15 {
-  font-weight: 800;
-  font-size: 3.8em;
-  text-transform: uppercase;
-  letter-spacing: 0.5em;
-}
-
-.ml15 .word {
-  display: inline-block;
-  line-height: 1em;
-}
-</style>
-
-
-    </div>
-	</div>
-  
-	<div class="inner composition" id="comp16" style="background-color: #f3e9c6">
-   
-    <div class="innert composition-wrapper" data-color="f3e9c6">
-      <h1 class="ml16 AdText target1" id="ml16_letters-1" >Great</h1>
-      <h1 class="ml16 AdText target2" id="ml16_letters-2">Awesome</h1>
-      <h1 class="ml16 AdText target3" id="ml16_letters-3">Unbelievable</h1>
-      <h1 class="ml16 AdText target4" id="ml16_letters-4">Get It Now!</h1>
-
-<!--more-->
-
-<script>
-// Wrap every letter in a span
-var textWrapper = document.getElementById('ml16_letters-1');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
-
-textWrapper = document.getElementById('ml16_letters-2');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
-
-textWrapper = document.getElementById('ml16_letters-3');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
-textWrapper = document.getElementById('ml16_letters-4');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
-
-timeline16 = anime.timeline({loop: true, autoplay:false})
-  .add({
-    targets: '.ml16 .letter-1',
-    translateY: [-100,0],
-    easing: "easeOutExpo",
-    duration: 1400,
-    delay: (el, i) => 30 * i
-  }).add({
-    targets: '.ml16 .letter-1',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-    targets: '.ml16 .letter-2',
-    translateY: [-100,0],
-    easing: "easeOutExpo",
-    duration: 1400,
-    delay: (el, i) => 30 * i
-  }).add({
-    targets: '.ml16 .letter-2',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-    targets: '.ml16 .letter-3',
-    translateY: [-100,0],
-    easing: "easeOutExpo",
-    duration: 1400,
-    delay: (el, i) => 30 * i
-  }).add({
-    targets: '.ml16 .letter-3',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-    targets: '.ml16 .letter-4',
-    translateY: [-100,0],
-    easing: "easeOutExpo",
-    duration: 1400,
-    delay: (el, i) => 30 * i
-  }).add({
-    targets: '.ml16 .letter-4',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  }).add({
-  targets:'.product-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 100,}
-).add({
-  targets:'.amazon-img',
-    opacity: [0,1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000,
-}).add({
-  targets:'img',
-  duration:1000,
-  opacity: [1,0],
-  easing: "easeOutExpo",
-    delay: 4000,
-});
-</script>
-
-<style>
-.ml16 {
-  color: #402d2d;
-  padding: 40px 0;
-  font-weight: 800;
-  font-size: 2em;
-  text-transform: uppercase;
-  letter-spacing: 0.5em;
-  overflow: hidden;
-}
-
-.ml16 .letter {
-  display: inline-block;
-  line-height: 1em;
-}
-</style>
-
-
-    </div>
-	</div>
-  
-</div>
-<style>
-    .inner {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: none;
-
-}
-
-</style>
-<script>
-    function showDiv(divId)
-{  
-    const inners = document.getElementsByClassName('inner');
-    for (let i = 0; i < inners.length; i++) {
-      inners[i].style.display = 'none' ;
-}
-timeline1.pause();
-timeline2.pause();
-timeline3.pause();
-timeline4.pause();
-timeline5.pause();
-timeline6.pause();
-timeline7.pause();
-timeline8.pause();
-timeline9.pause();
-timeline10.pause();
-timeline11.pause();
-timeline12.pause();
-timeline13.pause();
-timeline14.pause();
-timeline15.pause();
-timeline16.pause();
-
-
-   
-    document.getElementById(divId.value).style.display =  'block' ;
-    switch (divId.value) {
-  case "comp1":
-    timeline1.restart();
-    
-    break;
-    case "comp2":
-    timeline2.restart();
-    
-    break;
-    case "comp3":
-    timeline3.restart();
-    
-    break;
-    case "comp4":
-    timeline4.restart();
-    
-    break;
-    case "comp5":
-    timeline5.restart();
-    
-    break;
-    case "comp6":
-    timeline6.restart();
-    
-    break;
-    case "comp7":
-    timeline7.restart();
-    
-    break;
-    case "comp8":
-    timeline8.restart();
-    
-    break;
-    case "comp9":
-    timeline9.restart();
-    
-    break;
-    case "comp10":
-    timeline10.restart();
-    
-    break;
-    case "comp11":
-    timeline11.restart();
-    
-    break;
-    case "comp12":
-    timeline12.restart();
-    
-    break;
-    case "comp13":
-    timeline13.restart();
-    
-    break;
-    case "comp14":
-    timeline14.restart();
-    
-    break;
-    case "comp15":
-    timeline15.restart();
-    
-    break;
-    case "comp16":
-    timeline16.restart();
-    
-    break;
- 
-}
-    
-    
-}
-</script>
-
-
-<style type="text/css">
-  .tg  {border-collapse:collapse;border-spacing:0;width: 30%;margin-left: 54%;margin-top: 2%;}
-
-  </style>
-  <table class="tg">
-  <tbody>
-    <tr>
-      <td class="tg-0lax" style="width: 36%;">
-        <div class="dropdown-menu" id="dropdown-menu" style="float: left;">
-          <button onclick="handleDropdownClicked(event)">
-            <span class="material-symbols-outlined">
-              dropdown
-            </span>
-            Select Animation
-            <span id="dropdown-icon" class="material-symbols-outlined">
-              expand_more
-            </span>
-          </button>
-          <section class="dropdown__menu-labels">
-            <button value="comp1" onclick="showDiv(this)">
-              
-              Animation 1
-            </button>
-            <button value="comp2" onclick="showDiv(this)">
-              
-              Animation 2
-            </button>
-            <button value="comp3" onclick="showDiv(this)">
-              
-              Animation 3
-            </button>
-            <button value="comp4" onclick="showDiv(this)">
-              
-              Animation 4
-            </button>
-            <button value="comp14" onclick="showDiv(this)">
-              
-              Animation 5
-            </button>
-            <button value="comp6" onclick="showDiv(this)">
-              
-              Animation 6
-            </button>
-            <button value="comp7" onclick="showDiv(this)">
-              
-              Animation 7
-            </button>
-            <button value="comp16" onclick="showDiv(this)">
-              
-              Animation 8
-            </button>
-            <button value="comp9" onclick="showDiv(this)">
-              
-              Animation 9
-            </button>
-            <button value="comp10" onclick="showDiv(this)">
-              
-              Animation 10
-            </button>
-            <button value="comp11" onclick="showDiv(this)">
-              
-              Animation 11
-            </button>
-            <button value="comp12" onclick="showDiv(this)">
-              
-              Animation 12
-            </button>
-            <button value="comp13" onclick="showDiv(this)">
-              
-              Animation 13
-            </button>
-            
-            
-          </section>
-        </div>
-        <script type="text/javascript" src="js/dropdown.js"></script>
-      </td>
-
-      <td class="tg-0lax" style="width:24%; height: 64px;">
-        <div class="select-txt-color" style="width: 100%;height: 64px; float: left; left:5%; background-color: #11101D;text-align: center; border-radius: 12px; display: grid; grid-template-columns: 1fr;">
-          <label for="color-picker" style="color: #dfe0e7; font-size:16px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 10px;">Text Color:</label>
-          <input type="color" value="#ff0000" id="color-picker2" style="margin-left: 30%;" />
-        </div>
-      </td>
-      <td class="tg-0lax" style="width: min-content;">
-        
-        <div class="componentsBox" style=" float: left; margin-left: 15% ; width: 100px; height: 64px; display: grid; grid-template-columns: 1fr; background-color: #11101D;text-align: center; border-radius: 12px;">
-          <span style="color: #dfe0e7; font-size:16px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 10px;">Alt Logo:</span> 
-          <label class="switch m5">
-            <input type="checkbox" id="check" onchange="changePic()">
-            <small></small>
-          </label>
-        </div>
-        
-        <script type="text/javascript">
-          function changePic() {
-            var amazonImage = document.getElementById('amazon');
-            
-            if (document.getElementById("check").checked) {
-             
-              amazonImage.src = "images/amazon-Dark.png";
-            } else {
-              
-              amazonImage.src = "images/amazon-Light.png";
-            }
+  startRecordBtn.disabled = false;
+  stopRecordBtn.disabled = true;
+           }
+          });
+          return timeline6;
           }
+          var timeline6 = initTimeline6();
+          </script>
+          
+          <style>
+          .ml6 {
+            position: relative;
+            font-weight: 900;
+            font-size: 3.3em;
+          }
+          
+          .ml6 .text-wrapper {
+            position: relative;
+            display: inline-block;
+            padding-top: 0.2em;
+            padding-right: 0.05em;
+            padding-bottom: 0.1em;
+            overflow: hidden;
+          }
+          
+          .ml6 .letter {
+            display: inline-block;
+            line-height: 1em;
+          }
+          </style>
+          
+          
+              </div>
+            </div>
+            
+            <div class="inner composition" id="comp7" style="background-color: #45383c">
+              
+              <div class="innert composition-wrapper" data-color="45383c">
+                <h1 class="ml7">
+                  <span class="text-wrapper">
+                     
+                      <span class="letters AdText target1" id = "ml7_letters-1">High Quality</span>
+                      
+                  </span>
+                  </h1>
+                  <h1 class="ml7 ">
+                    <span class="text-wrapper">
+                        
+                        <span class="letters AdText target2" id = "ml7_letters-2">Best offer</span>
+                        
+                    </span>
+                    </h1>
+                    <h1 class="ml7 ">
+                      <span class="text-wrapper">
+                          
+                          <span class="letters AdText target3" id = "ml7_letters-3">Don't Miss Out</span>
+                          
+                      </span>
+                      </h1>
+                      <h1 class="ml7 ">
+                        <span class="text-wrapper">
+                            
+                            <span class="letters AdText target4" id = "ml7_letters-4">Get It Now!</span>
+                            
+                        </span>
+                        </h1>
+          
+          <!--more-->
+          
+          <script>
+            function initTimeline7(){
+          // Wrap every letter in a span
+          var textWrapper = document.getElementById('ml7_letters-1');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
+          
+          textWrapper = document.getElementById('ml7_letters-2');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
+          
+          textWrapper = document.getElementById('ml7_letters-3');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
+          textWrapper = document.getElementById('ml7_letters-4');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
+          
+          
+          timeline7 = anime.timeline({loop: true,autoplay:false})
+            .add({
+              targets: '.ml7 .letter-1',
+              translateY: ["1.1em", 0],
+              translateX: ["0.55em", 0],
+              translateZ: 0,
+              rotateZ: [180, 0],
+              duration: 750,
+              easing: "easeOutExpo",
+              delay: (el, i) => 50 * i
+            }).add({
+              targets: '.ml7 .letter-1',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+              targets: '.ml7 .letter-2',
+              translateY: ["1.1em", 0],
+              translateX: ["0.55em", 0],
+              translateZ: 0,
+              rotateZ: [180, 0],
+              duration: 750,
+              easing: "easeOutExpo",
+              delay: (el, i) => 50 * i
+            }).add({
+              targets: '.ml7 .letter-2',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+              targets: '.ml7 .letter-3',
+              translateY: ["1.1em", 0],
+              translateX: ["0.55em", 0],
+              translateZ: 0,
+              rotateZ: [180, 0],
+              duration: 750,
+              easing: "easeOutExpo",
+              delay: (el, i) => 50 * i
+            }).add({
+              targets: '.ml7 .letter-3',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+              targets: '.ml7 .letter-4',
+              translateY: ["1.1em", 0],
+              translateX: ["0.55em", 0],
+              translateZ: 0,
+              rotateZ: [180, 0],
+              duration: 750,
+              easing: "easeOutExpo",
+              delay: (el, i) => 50 * i
+            }).add({
+              targets: '.ml7 .letter-4',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+            targets:'.product-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 100,}
+          ).add({
+            targets:'.amazon-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000,
+          }).add({
+            targets:'img',
+            duration:1000,
+            opacity: [1,0],
+            easing: "easeOutExpo",
+              delay: 4000,
+              complete:  function stopEvent(){
+              
+              isRecording = false;
+              stopRecording();
+          document.getElementById("compositions").style.width = '50%'
+          document.getElementById("compositions").style.height = '50%'
+          document.getElementById("compositions").style.top = 'auto'
+          document.getElementById("compositions").style.left = 'auto'
+          document.getElementById("img-container").style.width = '50%'
+          document.getElementById("img-container").style.height = '50%'
+          document.getElementById("img-container").style.top = 'auto'
+          document.getElementById("img-container").style.left = 'auto'
+          document.getElementById("header").style.display = "block"
+          document.getElementById("bg_div").style.width = '50%'
+          document.getElementById("bg_div").style.height = '50%'
+          document.getElementById("bg_div").style.top = 'auto'
+          document.getElementById("bg_div").style.left = 'auto'
+           
+  startRecordBtn.disabled = false;
+  stopRecordBtn.disabled = true;
+           }
+          });
+          return timeline7;
+          }
+          var timeline7 = initTimeline7();
+          </script>
+          
+          <style>
+          .ml7 {
+            position: relative;
+            font-weight: 900;
+            font-size: 3.7em;
+          }
+          .ml7 .text-wrapper {
+            position: relative;
+            display: inline-block;
+            padding-top: 0.2em;
+            padding-right: 0.05em;
+            padding-bottom: 0.1em;
+            overflow: hidden;
+          }
+          .ml7 .letter {
+            transform-origin: 0 100%;
+            display: inline-block;
+            line-height: 1em;
+          }
+          </style>
+          
+          
+              </div>
+            </div>
+            
+            <div class="inner composition" id="comp8" style="background-color: #98bec8">
+              
+              <div class="innert composition-wrapper" data-color="98bec8">
+                <h1 class="ml8">
+            <span class="letters-container">
+              <span class="letters letters-left">Hi</span>
+              <span class="letters bang">!</span>
+            </span>
+            <span class="circle circle-white"></span>
+            <span class="circle circle-dark"></span>
+            <span class="circle circle-container"><span class="circle circle-dark-dashed"></span></span>
+          </h1>
+          
+          <!--more-->
+          
+          <script>
+            function initTimeline8(){
+          timeline8= anime.timeline({loop: true})
+            .add({
+              targets: '.ml8 .circle-white',
+              scale: [0, 3],
+              opacity: [1, 0],
+              easing: "easeInOutExpo",
+              rotateZ: 360,
+              duration: 1100
+            }).add({
+              targets: '.ml8 .circle-container',
+              scale: [0, 1],
+              duration: 1100,
+              easing: "easeInOutExpo",
+              offset: '-=1000'
+            }).add({
+              targets: '.ml8 .circle-dark',
+              scale: [0, 1],
+              duration: 1100,
+              easing: "easeOutExpo",
+              offset: '-=600'
+            }).add({
+              targets: '.ml8 .letters-left',
+              scale: [0, 1],
+              duration: 1200,
+              offset: '-=550'
+            }).add({
+              targets: '.ml8 .bang',
+              scale: [0, 1],
+              rotateZ: [45, 15],
+              duration: 1200,
+              offset: '-=1000'
+            }).add({
+              targets: '.ml8',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1400
+            });
+          
+          anime({
+            targets: '.ml8 .circle-dark-dashed',
+            rotateZ: 360,
+            duration: 8000,
+            easing: "linear",
+            loop: true
+          });
+          return timeline8;
+          }
+          var timeline8 = initTimeline8();
+          </script>
+          
+          <style>
+          h1.ml8 {
+            font-weight: 900;
+            font-size: 4.5em;
+            color: #fff;
+            width: 3em;
+            height: 3em;
+          }
+          
+          .ml8 .letters-container {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            height: 1em;
+          }
+          
+          .ml8 .letters {
+            position: relative;
+            z-index: 2;
+            display: inline-block;
+            line-height: 0.7em;
+            right: -0.12em;
+            top: -0.2em;
+          }
+          
+          .ml8 .bang {
+            font-size: 1.4em;
+            top: auto;
+            left: -0.06em;
+          }
+          
+          .ml8 .circle {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+          }
+          
+          .ml8 .circle-white {
+            width: 3em;
+            height: 3em;
+            border: 2px dashed white;
+            border-radius: 2em;
+          }
+          
+          .ml8 .circle-dark {
+            width: 2.2em;
+            height: 2.2em;
+            background-color: #4f7b86;
+            border-radius: 3em;
+            z-index: 1;
+          }
+          
+          .ml8 .circle-dark-dashed {
+            border-radius: 2.4em;
+            background-color: transparent;
+            border: 2px dashed #4f7b86;
+            width: 2.3em;
+            height: 2.3em;
+          }
+          </style>
+          
+          
+              </div>
+            </div>
+            
+            <div class="inner composition" id="comp9" style="background-color: #1a1a1a">
+             
+              <div class="innert composition-wrapper" data-color="1a1a1a">
+                <h1 class="ml9">
+                  <span class="text-wrapper">
+                     
+                      <span class="letters AdText target1" id = "ml9_letters-1">High Quality</span>
+                      
+                  </span>
+                  </h1>
+                  <h1 class="ml9 ">
+                    <span class="text-wrapper">
+                        
+                        <span class="letters AdText target2" id = "ml9_letters-2">Best offer</span>
+                        
+                    </span>
+                    </h1>
+                    <h1 class="ml9 ">
+                      <span class="text-wrapper">
+                          
+                          <span class="letters AdText target3" id = "ml9_letters-3">Don't Miss Out</span>
+                          
+                      </span>
+                      </h1>
+                      <h1 class="ml9 ">
+                        <span class="text-wrapper">
+                            
+                            <span class="letters AdText target4" id = "ml9_letters-4">Get It Now!</span>
+                            
+                        </span>
+                        </h1>
+          
+          <!--more-->
+          
+          <script>
+            function initTimeline9(){
+          // Wrap every letter in a span
+          var textWrapper = document.getElementById('ml9_letters-1');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
+          
+          textWrapper = document.getElementById('ml9_letters-2');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
+          
+          textWrapper = document.getElementById('ml9_letters-3');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
+          textWrapper = document.getElementById('ml9_letters-4');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
+          
+          timeline9 = anime.timeline({loop: true,autoplay:false})
+            .add({
+              targets: '.ml9 .letter-1',
+              scale: [0, 1],
+              duration: 1500,
+              elasticity: 600,
+              delay: (el, i) => 45 * (i+1)
+            }).add({
+              targets: '.ml9 .letter-1',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+              targets: '.ml9 .letter-2',
+              scale: [0, 1],
+              duration: 1500,
+              elasticity: 600,
+              delay: (el, i) => 45 * (i+1)
+            }).add({
+              targets: '.ml9 .letter-2',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            })  .add({
+              targets: '.ml9 .letter-3',
+              scale: [0, 1],
+              duration: 1500,
+              elasticity: 600,
+              delay: (el, i) => 45 * (i+1)
+            }).add({
+              targets: '.ml9 .letter-3',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+              targets: '.ml9 .letter-4',
+              scale: [0, 1],
+              duration: 1500,
+              elasticity: 600,
+              delay: (el, i) => 45 * (i+1)
+            }).add({
+              targets: '.ml9 .letter-4',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+            targets:'.product-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 100,}
+          ).add({
+            targets:'.amazon-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000,
+          }).add({
+            targets:'img',
+            duration:1000,
+            opacity: [1,0],
+            easing: "easeOutExpo",
+              delay: 4000,
+              complete:  function stopEvent(){
+              
+              isRecording = false;
+              stopRecording();
+          document.getElementById("compositions").style.width = '50%'
+          document.getElementById("compositions").style.height = '50%'
+          document.getElementById("compositions").style.top = 'auto'
+          document.getElementById("compositions").style.left = 'auto'
+          document.getElementById("img-container").style.width = '50%'
+          document.getElementById("img-container").style.height = '50%'
+          document.getElementById("img-container").style.top = 'auto'
+          document.getElementById("img-container").style.left = 'auto'
+          document.getElementById("header").style.display = "block"
+          document.getElementById("bg_div").style.width = '50%'
+          document.getElementById("bg_div").style.height = '50%'
+          document.getElementById("bg_div").style.top = 'auto'
+          document.getElementById("bg_div").style.left = 'auto'
+           
+  startRecordBtn.disabled = false;
+  stopRecordBtn.disabled = true;
+           }
+          });
+          return timeline9;
+          }
+          var timeline9 = initTimeline9();
+          </script>
+          
+          <style>
+          .ml9 {
+            position: relative;
+            font-weight: 200;
+            font-size: 4em;
+          }
+          
+          .ml9 .text-wrapper {
+            position: relative;
+            display: inline-block;
+            padding-top: 0.2em;
+            padding-right: 0.05em;
+            padding-bottom: 0.1em;
+            overflow: hidden;
+          }
+          
+          .ml9 .letter {
+            transform-origin: 50% 100%;
+            display: inline-block;
+            line-height: 1em;
+          }
+          </style>
+          
+          
+              </div>
+            </div>
+            
+            <div class="inner composition" id="comp10" style="background-color: #224a54">
+              
+              <div class="innert composition-wrapper" data-color="224a54">
+                <h1 class="ml10">
+                  <span class="text-wrapper">
+                     
+                      <span class="letters AdText target1" id = "ml10_letters-1">High Quality</span>
+                      
+                  </span>
+                  </h1>
+                  <h1 class="ml10 ">
+                    <span class="text-wrapper">
+                        
+                        <span class="letters AdText target2" id = "ml10_letters-2">Best offer</span>
+                        
+                    </span>
+                    </h1>
+                    <h1 class="ml10 ">
+                      <span class="text-wrapper">
+                          
+                          <span class="letters AdText target3" id = "ml10_letters-3">Don't Miss Out</span>
+                          
+                      </span>
+                      </h1>
+                      <h1 class="ml10 ">
+                        <span class="text-wrapper">
+                            
+                            <span class="letters AdText target4" id = "ml10_letters-4">Get It Now!</span>
+                            
+                        </span>
+                        </h1>
+          
+          <!--more-->
+          
+          <script>
+            function initTimeline10(){
+          // Wrap every letter in a span
+          var textWrapper = document.getElementById('ml10_letters-1');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
+          
+          textWrapper = document.getElementById('ml10_letters-2');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
+          
+          textWrapper = document.getElementById('ml10_letters-3');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
+          textWrapper = document.getElementById('ml10_letters-4');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
+          
+          
+          timeline10 = anime.timeline({loop: true, autoplay:false})
+            .add({
+              targets: '.ml10 .letter-1',
+              rotateY: [-90, 0],
+              duration: 1300,
+              delay: (el, i) => 45 * i
+            }).add({
+              targets: '.ml10 .letter-1',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+              targets: '.ml10 .letter-2',
+              rotateY: [-90, 0],
+              duration: 1300,
+              delay: (el, i) => 45 * i
+            }).add({
+              targets: '.ml10 .letter-2',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }) .add({
+              targets: '.ml10 .letter-3',
+              rotateY: [-90, 0],
+              duration: 1300,
+              delay: (el, i) => 45 * i
+            }).add({
+              targets: '.ml10 .letter-3',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+              targets: '.ml10 .letter-4',
+              rotateY: [-90, 0],
+              duration: 1300,
+              delay: (el, i) => 45 * i
+            }).add({
+              targets: '.ml10 .letter-4',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+            targets:'.product-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 100,}
+          ).add({
+            targets:'.amazon-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000,
+          }).add({
+            targets:'img',
+            duration:1000,
+            opacity: [1,0],
+            easing: "easeOutExpo",
+              delay: 4000,
+              complete:  function stopEvent(){
+              
+              isRecording = false;
+              stopRecording();
+          document.getElementById("compositions").style.width = '50%'
+          document.getElementById("compositions").style.height = '50%'
+          document.getElementById("compositions").style.top = 'auto'
+          document.getElementById("compositions").style.left = 'auto'
+          document.getElementById("img-container").style.width = '50%'
+          document.getElementById("img-container").style.height = '50%'
+          document.getElementById("img-container").style.top = 'auto'
+          document.getElementById("img-container").style.left = 'auto'
+          document.getElementById("header").style.display = "block"
+          document.getElementById("bg_div").style.width = '50%'
+          document.getElementById("bg_div").style.height = '50%'
+          document.getElementById("bg_div").style.top = 'auto'
+          document.getElementById("bg_div").style.left = 'auto'
+           
+  startRecordBtn.disabled = false;
+  stopRecordBtn.disabled = true;
+           }
+          });
+          return timeline10;
+          }
+          var timeline10 = initTimeline10();
+          </script>
+          
+          <style>
+          .ml10 {
+            position: relative;
+            font-weight: 900;
+            font-size: 4em;
+          }
+          
+          .ml10 .text-wrapper {
+            position: relative;
+            display: inline-block;
+            padding-top: 0.2em;
+            padding-right: 0.05em;
+            padding-bottom: 0.1em;
+            overflow: hidden;
+          }
+          
+          .ml10 .letter {
+            display: inline-block;
+            line-height: 1em;
+            transform-origin: 0 0;
+          }
+          </style>
+          
+          
+              </div>
+            </div>
+            
+            <div class="inner composition" id="comp11" style="background-color: #e8c3b9">
+              
+              <div class="innert composition-wrapper" data-color="e8c3b9">
+                <h1 class="ml11">
+            <span class="text-wrapper">
+              <span class="line line1 extraBG"></span>
+              <span class="letters AdText target1" id = "ml11_letters-1">High Quality</span>
+            </span>
+          </h1>
+          <h1 class="ml11">
+            <span class="text-wrapper">
+              <span class="line line2 extraBG"></span>
+              <span class="letters AdText target2" id = "ml11_letters-2">Best offer</span>
+            </span>
+          </h1>
+          <h1 class="ml11">
+            <span class="text-wrapper">
+              <span class="line line3 extraBG"></span>
+              <span class="letters AdText target3" id = "ml11_letters-3">Don't Miss Out</span>
+            </span>
+          </h1>
+          <h1 class="ml11">
+            <span class="text-wrapper">
+              <span class="line line4 extraBG"></span>
+              <span class="letters AdText target4" id = "ml11_letters-4">Get It Now!</span>
+            </span>
+          </h1>
+          
+          <!--more-->
+          
+          <style>
+          .ml11 {
+            font-weight: 700;
+            font-size: 3.5em;
+          }
+          
+          .ml11 .text-wrapper {
+            position: relative;
+            display: inline-block;
+            padding-top: 0.1em;
+            padding-right: 0.05em;
+            padding-bottom: 0.15em;
+          }
+          
+          .ml11 .line {
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            height: 100%;
+            width: 3px;
+            background-color: #fff;
+            transform-origin: 0 50%;
+          }
+          
+          .ml11 .line1 { 
+            top: 0; 
+            left: 0;
+          }
+          
+          .ml11 .letter {
+            display: inline-block;
+            line-height: 1em;
+          }
+          </style>
+          
+          <script>
+            function initTimeline11(){
+          // Wrap every letter in a span
+          var textWrapper = document.getElementById('ml11_letters-1');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
+          
+          textWrapper = document.getElementById('ml11_letters-2');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
+          
+          textWrapper = document.getElementById('ml11_letters-3');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
+          textWrapper = document.getElementById('ml11_letters-4');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
+          timeline11 = anime.timeline({loop: true,autoplay:false})
+            .add({
+              targets: '.ml11 .line1',
+              scaleY: [0,1],
+              opacity: [0.5,1],
+              easing: "easeOutExpo",
+              duration: 700
+            })
+            .add({
+              targets: '.ml11 .line1',
+              translateX: [0, document.getElementById('ml11_letters-1').getBoundingClientRect().width + 10],
+              easing: "easeOutExpo",
+              duration: 700,
+              delay: 100
+            }).add({
+              targets: '.ml11 .letter-1',
+              opacity: [0,1],
+              easing: "easeOutExpo",
+              duration: 600,
+              offset: '-=775',
+              delay: (el, i) => 34 * (i+1)
+            }).add({
+              targets: '.ml11 .letter-1 , .ml11 .line1',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+              targets: '.ml11 .line2',
+              scaleY: [0,1],
+              opacity: [0.5,1],
+              easing: "easeOutExpo",
+              duration: 700
+            })
+            .add({
+              targets: '.ml11 .line2',
+              translateX: [0, document.getElementById('ml11_letters-2').getBoundingClientRect().width + 10],
+              easing: "easeOutExpo",
+              duration: 700,
+              delay: 100
+            }).add({
+              targets: '.ml11 .letter-2',
+              opacity: [0,1],
+              easing: "easeOutExpo",
+              duration: 600,
+              offset: '-=775',
+              delay: (el, i) => 34 * (i+1)
+            }).add({
+              targets: '.ml11 .letter-2, .ml11 .line2',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            })  .add({
+              targets: '.ml11 .line3',
+              scaleY: [0,1],
+              opacity: [0.5,1],
+              easing: "easeOutExpo",
+              duration: 700
+            })
+            .add({
+              targets: '.ml11 .line3',
+              translateX: [0, document.getElementById('ml11_letters-3').getBoundingClientRect().width + 10],
+              easing: "easeOutExpo",
+              duration: 700,
+              delay: 100
+            }).add({
+              targets: '.ml11 .letter-3',
+              opacity: [0,1],
+              easing: "easeOutExpo",
+              duration: 600,
+              offset: '-=775',
+              delay: (el, i) => 34 * (i+1)
+            }).add({
+              targets: '.ml11 .letter-3 , .ml11 .line3',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+              targets: '.ml11 .line4',
+              scaleY: [0,1],
+              opacity: [0.5,1],
+              easing: "easeOutExpo",
+              duration: 700
+            })
+            .add({
+              targets: '.ml11 .line4',
+              translateX: [0, document.getElementById('ml11_letters-4').getBoundingClientRect().width + 10],
+              easing: "easeOutExpo",
+              duration: 700,
+              delay: 100
+            }).add({
+              targets: '.ml11 .letter-4',
+              opacity: [0,1],
+              easing: "easeOutExpo",
+              duration: 600,
+              offset: '-=775',
+              delay: (el, i) => 34 * (i+1)
+            }).add({
+              targets: '.ml11 .letter-4, .ml11 .line4',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+            targets:'.product-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 100,}
+          ).add({
+            targets:'.amazon-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000,
+          }).add({
+            targets:'img',
+            duration:1000,
+            opacity: [1,0],
+            easing: "easeOutExpo",
+              delay: 4000,
+              complete:  function stopEvent(){
+              
+              isRecording = false;
+              stopRecording();
+          document.getElementById("compositions").style.width = '50%'
+          document.getElementById("compositions").style.height = '50%'
+          document.getElementById("compositions").style.top = 'auto'
+          document.getElementById("compositions").style.left = 'auto'
+          document.getElementById("img-container").style.width = '50%'
+          document.getElementById("img-container").style.height = '50%'
+          document.getElementById("img-container").style.top = 'auto'
+          document.getElementById("img-container").style.left = 'auto'
+          document.getElementById("header").style.display = "block"
+          document.getElementById("bg_div").style.width = '50%'
+          document.getElementById("bg_div").style.height = '50%'
+          document.getElementById("bg_div").style.top = 'auto'
+          document.getElementById("bg_div").style.left = 'auto'
+           
+  startRecordBtn.disabled = false;
+  stopRecordBtn.disabled = true;
+           }
+          });
+          return timeline11;
+          }
+          var timeline11 = initTimeline11();
+          </script>
+          
+          
+              </div>
+            </div>
+            
+            <div class="inner composition" id="comp12" style="background-color: #9ba5b5">
+              
+              <div class="innert composition-wrapper" data-color="9ba5b5">
+                <h1 class="ml12 AdText target1" id="ml12_letters-1" >High Quality</h1>
+                <h1 class="ml12 AdText target2" id="ml12_letters-2">Best offer</h1>
+                <h1 class="ml12 AdText target3" id="ml12_letters-3">Don't Miss Out</h1>
+                <h1 class="ml12 AdText target3" id="ml12_letters-4">Get It Now!</h1>
+          
+          <!--more-->
+          
+          <script>
+            function initTimeline12(){
+          // Wrap every letter in a span
+          var textWrapper = document.getElementById('ml12_letters-1');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
+          
+          textWrapper = document.getElementById('ml12_letters-2');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
+          
+          textWrapper = document.getElementById('ml12_letters-3');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
+          textWrapper = document.getElementById('ml12_letters-4');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
+          
+          timeline12 = anime.timeline({loop: true, autoplay:false})
+            .add({
+              targets: '.ml12 .letter-1',
+              translateX: [40,0],
+              translateZ: 0,
+              opacity: [0,1],
+              easing: "easeOutExpo",
+              duration: 1200,
+              delay: (el, i) => 500 + 30 * i
+            }).add({
+              targets: '.ml12 .letter-1',
+              translateX: [0,-30],
+              opacity: [1,0],
+              easing: "easeInExpo",
+              duration: 1100,
+              delay: (el, i) => 100 + 30 * i
+            })  .add({
+              targets: '.ml12 .letter-2',
+              translateX: [40,0],
+              translateZ: 0,
+              opacity: [0,1],
+              easing: "easeOutExpo",
+              duration: 1200,
+              delay: (el, i) => 500 + 30 * i
+            }).add({
+              targets: '.ml12 .letter-2',
+              translateX: [0,-30],
+              opacity: [1,0],
+              easing: "easeInExpo",
+              duration: 1100,
+              delay: (el, i) => 100 + 30 * i
+            })  .add({
+              targets: '.ml12 .letter-3',
+              translateX: [40,0],
+              translateZ: 0,
+              opacity: [0,1],
+              easing: "easeOutExpo",
+              duration: 1200,
+              delay: (el, i) => 500 + 30 * i
+            }).add({
+              targets: '.ml12 .letter-3',
+              translateX: [0,-30],
+              opacity: [1,0],
+              easing: "easeInExpo",
+              duration: 1100,
+              delay: (el, i) => 100 + 30 * i
+            })  .add({
+              targets: '.ml12 .letter-4',
+              translateX: [40,0],
+              translateZ: 0,
+              opacity: [0,1],
+              easing: "easeOutExpo",
+              duration: 1200,
+              delay: (el, i) => 500 + 30 * i
+            }).add({
+              targets: '.ml12 .letter-4',
+              translateX: [0,-30],
+              opacity: [1,0],
+              easing: "easeInExpo",
+              duration: 1100,
+              delay: (el, i) => 100 + 30 * i
+            }).add({
+            targets:'.product-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 100,}
+          ).add({
+            targets:'.amazon-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000,
+          }).add({
+            targets:'img',
+            duration:1000,
+            opacity: [1,0],
+            easing: "easeOutExpo",
+              delay: 4000,
+              complete:  function stopEvent(){
+              
+              isRecording = false;
+              stopRecording();
+          document.getElementById("compositions").style.width = '50%'
+          document.getElementById("compositions").style.height = '50%'
+          document.getElementById("compositions").style.top = 'auto'
+          document.getElementById("compositions").style.left = 'auto'
+          document.getElementById("img-container").style.width = '50%'
+          document.getElementById("img-container").style.height = '50%'
+          document.getElementById("img-container").style.top = 'auto'
+          document.getElementById("img-container").style.left = 'auto'
+          document.getElementById("header").style.display = "block"
+          document.getElementById("bg_div").style.width = '50%'
+          document.getElementById("bg_div").style.height = '50%'
+          document.getElementById("bg_div").style.top = 'auto'
+          document.getElementById("bg_div").style.left = 'auto'
+           
+  startRecordBtn.disabled = false;
+  stopRecordBtn.disabled = true;
+           }
+          });
+          return timeline12;
+          }
+          var timeline12 = initTimeline12();
+          </script>
+          
+          <style>
+          .ml12 {
+            font-weight: 200;
+            font-size: 1.8em;
+            text-transform: uppercase;
+            letter-spacing: 0.5em;
+          }
+          
+          .ml12 .letter {
+            display: inline-block;
+            line-height: 1em;
+          }
+          </style>
+          
+          
+              </div>
+            </div>
+            
+            <div class="inner composition" id="comp13" style="background-color: #98bec8">
+              
+              <div class="innert composition-wrapper" data-color="98bec8">
+                <h1 class="ml13 AdText target1" id="ml13_letters-1" >High Quality</h1>
+                <h1 class="ml13 AdText target2" id="ml13_letters-2">Best offer</h1>
+                <h1 class="ml13 AdText target3" id="ml13_letters-3">Don't Miss Out</h1>
+                <h1 class="ml13 AdText target4" id="ml13_letters-4">Get It Now!</h1>
+          
+          <!--more-->
+          
+          <script>
+            function initTimeline13(){
+          // Wrap every letter in a span
+          var textWrapper = document.getElementById('ml13_letters-1');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
+          
+          textWrapper = document.getElementById('ml13_letters-2');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
+          
+          textWrapper = document.getElementById('ml13_letters-3');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
+          textWrapper = document.getElementById('ml13_letters-4');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
+          
+          
+          timeline13 = anime.timeline({loop: true, autoplay:false})
+            .add({
+              targets: '.ml13 .letter-1',
+              translateY: [100,0],
+              translateZ: 0,
+              opacity: [0,1],
+              easing: "easeOutExpo",
+              duration: 1400,
+              delay: (el, i) => 300 + 30 * i
+            }).add({
+              targets: '.ml13 .letter-1',
+              translateY: [0,-100],
+              opacity: [1,0],
+              easing: "easeInExpo",
+              duration: 1200,
+              delay: (el, i) => 100 + 30 * i
+            })  .add({
+              targets: '.ml13 .letter-2',
+              translateY: [100,0],
+              translateZ: 0,
+              opacity: [0,1],
+              easing: "easeOutExpo",
+              duration: 1400,
+              delay: (el, i) => 300 + 30 * i
+            }).add({
+              targets: '.ml13 .letter-2',
+              translateY: [0,-100],
+              opacity: [1,0],
+              easing: "easeInExpo",
+              duration: 1200,
+              delay: (el, i) => 100 + 30 * i
+            })  .add({
+              targets: '.ml13 .letter-3',
+              translateY: [100,0],
+              translateZ: 0,
+              opacity: [0,1],
+              easing: "easeOutExpo",
+              duration: 1400,
+              delay: (el, i) => 300 + 30 * i
+            }).add({
+              targets: '.ml13 .letter-3',
+              translateY: [0,-100],
+              opacity: [1,0],
+              easing: "easeInExpo",
+              duration: 1200,
+              delay: (el, i) => 100 + 30 * i
+            })  .add({
+              targets: '.ml13 .letter-4',
+              translateY: [100,0],
+              translateZ: 0,
+              opacity: [0,1],
+              easing: "easeOutExpo",
+              duration: 1400,
+              delay: (el, i) => 300 + 30 * i
+            }).add({
+              targets: '.ml13 .letter-4',
+              translateY: [0,-100],
+              opacity: [1,0],
+              easing: "easeInExpo",
+              duration: 1200,
+              delay: (el, i) => 100 + 30 * i
+            }).add({
+            targets:'.product-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 100,}
+          ).add({
+            targets:'.amazon-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000,
+          }).add({
+            targets:'img',
+            duration:1000,
+            opacity: [1,0],
+            easing: "easeOutExpo",
+              delay: 4000,
+              complete:  function stopEvent(){
+              
+              isRecording = false;
+              stopRecording();
+          document.getElementById("compositions").style.width = '50%'
+          document.getElementById("compositions").style.height = '50%'
+          document.getElementById("compositions").style.top = 'auto'
+          document.getElementById("compositions").style.left = 'auto'
+          document.getElementById("img-container").style.width = '50%'
+          document.getElementById("img-container").style.height = '50%'
+          document.getElementById("img-container").style.top = 'auto'
+          document.getElementById("img-container").style.left = 'auto'
+          document.getElementById("header").style.display = "block"
+          document.getElementById("bg_div").style.width = '50%'
+          document.getElementById("bg_div").style.height = '50%'
+          document.getElementById("bg_div").style.top = 'auto'
+          document.getElementById("bg_div").style.left = 'auto'
+  startRecordBtn.disabled = false;
+  stopRecordBtn.disabled = true;
+           }
+          });
+          return timeline13;
+          }
+          var timeline13 = initTimeline13();
+          </script>
+          
+          <style>
+          .ml13 {
+            font-size: 1.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5em;
+            font-weight: 600;
+          }
+          
+          .ml13 .letter {
+            display: inline-block;
+            line-height: 1em;
+          }
+          </style>
+          
+          
+              </div>
+            </div>
+            
+            <div class="inner composition" id="comp14" style="background-color: #45383c">
+              
+              <div class="innert composition-wrapper" data-color="45383c">
+                <h1 class="ml14">
+            <span class="text-wrapper">
+              <span class="letters AdText target1" id="ml14_letters-1">High Quality</span>
+              <span class="line line1 extraBG"></span>
+            </span>
+          </h1>
+          <h1 class="ml14">
+            <span class="text-wrapper">
+              <span class="letters AdText target2" id="ml14_letters-2">Best offer</span>
+              <span class="line line2 extraBG"></span>
+            </span>
+          </h1>
+          <h1 class="ml14">
+            <span class="text-wrapper">
+              <span class="letters AdText target3" id="ml14_letters-3">Don't Miss Out</span>
+              <span class="line line3 extraBG"></span>
+            </span>
+          </h1>
+          <h1 class="ml14">
+            <span class="text-wrapper">
+              <span class="letters AdText target4" id="ml14_letters-4">Get It Now!</span>
+              <span class="line line4 extraBG"></span>
+            </span>
+          </h1>
+          
+          <!--more-->
+          
+          <script>
+            function initTimeline14(){
+          // Wrap every letter in a span
+          var textWrapper = document.getElementById('ml14_letters-1');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
+          
+          textWrapper = document.getElementById('ml14_letters-2');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
+          
+          textWrapper = document.getElementById('ml14_letters-3');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
+          textWrapper = document.getElementById('ml14_letters-4');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
+          
+          timeline14 = anime.timeline({loop: true,autoplay:false})
+            .add({
+              targets: '.ml14 .line1',
+              scaleX: [0,1],
+              opacity: [0.5,1],
+              easing: "easeInOutExpo",
+              duration: 900
+            }).add({
+              targets: '.ml14 .letter-1',
+              opacity: [0,1],
+              translateX: [40,0],
+              translateZ: 0,
+              scaleX: [0.3, 1],
+              easing: "easeOutExpo",
+              duration: 800,
+              offset: '-=600',
+              delay: (el, i) => 150 + 25 * i
+            }).add({
+              targets: '.ml14 .letter-1 , .ml14 .line1',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+              targets: '.ml14 .line2',
+              scaleX: [0,1],
+              opacity: [0.5,1],
+              easing: "easeInOutExpo",
+              duration: 900
+            }).add({
+              targets: '.ml14 .letter-2',
+              opacity: [0,1],
+              translateX: [40,0],
+              translateZ: 0,
+              scaleX: [0.3, 1],
+              easing: "easeOutExpo",
+              duration: 800,
+              offset: '-=600',
+              delay: (el, i) => 150 + 25 * i
+            }).add({
+              targets: '.ml14 .letter-2 , .ml14 .line2',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            })  .add({
+              targets: '.ml14 .line3',
+              scaleX: [0,1],
+              opacity: [0.5,1],
+              easing: "easeInOutExpo",
+              duration: 900
+            }).add({
+              targets: '.ml14 .letter-3',
+              opacity: [0,1],
+              translateX: [40,0],
+              translateZ: 0,
+              scaleX: [0.3, 1],
+              easing: "easeOutExpo",
+              duration: 800,
+              offset: '-=600',
+              delay: (el, i) => 150 + 25 * i
+            }).add({
+              targets: '.ml14 .letter-3 , .ml14 .line3',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+              targets: '.ml14 .line4',
+              scaleX: [0,1],
+              opacity: [0.5,1],
+              easing: "easeInOutExpo",
+              duration: 900
+            }).add({
+              targets: '.ml14 .letter-4',
+              opacity: [0,1],
+              translateX: [40,0],
+              translateZ: 0,
+              scaleX: [0.3, 1],
+              easing: "easeOutExpo",
+              duration: 800,
+              offset: '-=600',
+              delay: (el, i) => 150 + 25 * i
+            }).add({
+              targets: '.ml14 .letter-4 , .ml14 .line4',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+            targets:'.product-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 100,}
+          ).add({
+            targets:'.amazon-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000,
+          }).add({
+            targets:'img',
+            duration:1000,
+            opacity: [1,0],
+            easing: "easeOutExpo",
+              delay: 4000,
+              complete:  function stopEvent(){
+              
+              isRecording = false;
+              stopRecording();    
+          document.getElementById("compositions").style.width = '50%'
+          document.getElementById("compositions").style.height = '50%'
+          document.getElementById("compositions").style.top = 'auto'
+          document.getElementById("compositions").style.left = 'auto'
+          document.getElementById("img-container").style.width = '50%'
+          document.getElementById("img-container").style.height = '50%'
+          document.getElementById("img-container").style.top = 'auto'
+          document.getElementById("img-container").style.left = 'auto'
+          document.getElementById("header").style.display = "block"
+          document.getElementById("bg_div").style.width = '50%'
+          document.getElementById("bg_div").style.height = '50%'
+          document.getElementById("bg_div").style.top = 'auto'
+          document.getElementById("bg_div").style.left = 'auto'
+          
+  startRecordBtn.disabled = false;
+  stopRecordBtn.disabled = true;
+           }
+          });
+          return timeline14;
+          }
+          var timeline14 = initTimeline14();
+          </script>
+          
+          <style>
+          .ml14 {
+            font-weight: 200;
+            font-size: 3.2em;
+          }
+          
+          .ml14 .text-wrapper {
+            position: relative;
+            display: inline-block;
+            padding-top: 0.1em;
+            padding-right: 0.05em;
+            padding-bottom: 0.15em;
+          }
+          
+          .ml14 .line {
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            background-color: #fff;
+            transform-origin: 100% 100%;
+            bottom: 0;
+          }
+          
+          .ml14 .letter {
+            display: inline-block;
+            line-height: 1em;
+          }
+          </style>
+          
+          
+              </div>
+            </div>
+            
+            <div class="inner composition" id="comp15" style="background-color: #c1605c">
+            
+              <div class="innert composition-wrapper" data-color="c1605c">
+                <h1 class="ml15">
+            <span class="word">Out</span>
+            <span class="word">now</span>
+          </h1>
+          
+          <!--more-->
+          
+          <script>
+            function initTimeline15(){
+          timeline15 = anime.timeline({loop: true})
+            .add({
+              targets: '.ml15 .word',
+              scale: [14,1],
+              opacity: [0,1],
+              easing: "easeOutCirc",
+              duration: 800,
+              delay: (el, i) => 800 * i
+            }).add({
+              targets: '.ml15',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            });
+            return timeline15;
+          }
+          var timeline15 = initTimeline15();
+          </script>
+          
+          <style>
+          .ml15 {
+            font-weight: 800;
+            font-size: 3.8em;
+            text-transform: uppercase;
+            letter-spacing: 0.5em;
+          }
+          
+          .ml15 .word {
+            display: inline-block;
+            line-height: 1em;
+          }
+          </style>
+          
+          
+              </div>
+            </div>
+            
+            <div class="inner composition" id="comp16" style="background-color: #f3e9c6">
+             
+              <div class="innert composition-wrapper" data-color="f3e9c6">
+                <h1 class="ml16 AdText target1" id="ml16_letters-1" >High Quality</h1>
+                <h1 class="ml16 AdText target2" id="ml16_letters-2">Best offer</h1>
+                <h1 class="ml16 AdText target3" id="ml16_letters-3">Don't Miss Out</h1>
+                <h1 class="ml16 AdText target4" id="ml16_letters-4">Get It Now!</h1>
+          
+          <!--more-->
+          
+          <script>
+            function initTimeline16(){
+          // Wrap every letter in a span
+          var textWrapper = document.getElementById('ml16_letters-1');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-1'>$&</span>");
+          
+          textWrapper = document.getElementById('ml16_letters-2');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-2'>$&</span>");
+          
+          textWrapper = document.getElementById('ml16_letters-3');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-3'>$&</span>");
+          textWrapper = document.getElementById('ml16_letters-4');
+          
+          textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter letter-4'>$&</span>");
+          
+          timeline16 = anime.timeline({loop: true, autoplay:false})
+            .add({
+              targets: '.ml16 .letter-1',
+              translateY: [-100,0],
+              easing: "easeOutExpo",
+              duration: 1400,
+              delay: (el, i) => 30 * i
+            }).add({
+              targets: '.ml16 .letter-1',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+              targets: '.ml16 .letter-2',
+              translateY: [-100,0],
+              easing: "easeOutExpo",
+              duration: 1400,
+              delay: (el, i) => 30 * i
+            }).add({
+              targets: '.ml16 .letter-2',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+              targets: '.ml16 .letter-3',
+              translateY: [-100,0],
+              easing: "easeOutExpo",
+              duration: 1400,
+              delay: (el, i) => 30 * i
+            }).add({
+              targets: '.ml16 .letter-3',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+              targets: '.ml16 .letter-4',
+              translateY: [-100,0],
+              easing: "easeOutExpo",
+              duration: 1400,
+              delay: (el, i) => 30 * i
+            }).add({
+              targets: '.ml16 .letter-4',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            }).add({
+            targets:'.product-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 100,}
+          ).add({
+            targets:'.amazon-img',
+              opacity: [0,1],
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000,
+          }).add({
+            targets:'img',
+            duration:1000,
+            opacity: [1,0],
+            easing: "easeOutExpo",
+              delay: 4000,
+              complete:  function stopEvent(){
+              
+              isRecording = false;
+              stopRecording();
+          document.getElementById("compositions").style.width = '50%'
+          document.getElementById("compositions").style.height = '50%'
+          document.getElementById("compositions").style.top = 'auto'
+          document.getElementById("compositions").style.left = 'auto'
+          document.getElementById("img-container").style.width = '50%'
+          document.getElementById("img-container").style.height = '50%'
+          document.getElementById("img-container").style.top = 'auto'
+          document.getElementById("img-container").style.left = 'auto'
+          document.getElementById("header").style.display = "block"
+          document.getElementById("bg_div").style.width = '50%'
+          document.getElementById("bg_div").style.height = '50%'
+          document.getElementById("bg_div").style.top = 'auto'
+          document.getElementById("bg_div").style.left = 'auto'
+          
+  startRecordBtn.disabled = false;
+  stopRecordBtn.disabled = true;
+           }
+          });
+          return timeline16;
+          }
+          var timeline16 = initTimeline16();
+          </script>
+          
+          <style>
+          .ml16 {
+            color: #402d2d;
+            padding: 40px 0;
+            font-weight: 800;
+            font-size: 2em;
+            text-transform: uppercase;
+            letter-spacing: 0.5em;
+            overflow: hidden;
+          }
+          
+          .ml16 .letter {
+            display: inline-block;
+            line-height: 1em;
+          }
+          </style>
+          
+          
+              </div>
+            </div>
+            
+          </div>
+          <style>
+              .inner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: none;
+          
+          }
+          
+          </style>
+          <script>
+          
+          
+              function showDiv(divId)
+          {  
+            currentDiv = divId;
+              const inners = document.getElementsByClassName('inner');
+              for (let i = 0; i < inners.length; i++) {
+                inners[i].style.display = 'none' ;
+          }
+          timeline1.pause();
+          timeline2.pause();
+          timeline3.pause();
+          timeline4.pause();
+          timeline5.pause();
+          timeline6.pause();
+          timeline7.pause();
+          timeline8.pause();
+          timeline9.pause();
+          timeline10.pause();
+          timeline11.pause();
+          timeline12.pause();
+          timeline13.pause();
+          timeline14.pause();
+          timeline15.pause();
+          timeline16.pause();
+          
+          
+             
+              document.getElementById(divId).style.display =  'block' ;
+              switch (divId) {
+            case "comp1":
+              timeline1.restart();
+              
+              break;
+              case "comp2":
+              timeline2.restart();
+              
+              break;
+              case "comp3":
+              timeline3.restart();
+              
+              break;
+              case "comp4":
+              timeline4.restart();
+              
+              break;
+              case "comp5":
+              timeline5.restart();
+              
+              break;
+              case "comp6":
+              timeline6.restart();
+              
+              break;
+              case "comp7":
+              timeline7.restart();
+              
+              break;
+              case "comp8":
+              timeline8.restart();
+              
+              break;
+              case "comp9":
+              timeline9.restart();
+              
+              break;
+              case "comp10":
+              timeline10.restart();
+              
+              break;
+              case "comp11":
+              timeline11.restart();
+              
+              break;
+              case "comp12":
+              timeline12.restart();
+              
+              break;
+              case "comp13":
+              timeline13.restart();
+              
+              break;
+              case "comp14":
+              timeline14.restart();
+              
+              break;
+              case "comp15":
+              timeline15.restart();
+              
+              break;
+              case "comp16":
+              timeline16.restart();
+              
+              break;
+           
+          }
+              
+              
+          }
+          
+            let currentDiv = 'comp1';
+          let isRecording = false;
+          function recordEvent(){
+              isRecording = true;
+          
+          showDiv(currentDiv)
+          const comps = document.getElementById("compositions");
+          const imgs = document.getElementById("img-container");
+          const bg_div = document.getElementById("bg_div");
+          imgs.style.width = '100%'
+          imgs.style.height = '100%'
+          imgs.style.top = '0px';
+          imgs.style.left = '0px';
+          comps.style.width = '100%'
+          comps.style.height = '100%'
+          comps.style.top = '0px';
+          comps.style.left = '0px';
+          bg_div.style.width = '100%'
+          bg_div.style.height = '100%'
+          bg_div.style.top = '0px';
+          bg_div.style.left = '0px';
+          document.getElementById("header").style.display = "none"
+          
+          
+          
+          
+            }
+           
+          </script>
+        </td>
+        <td class="tg-0pky" style="width: 25%;">
+         
+        </td>
+        <td class="tg-0lax" rowspan="2" style="width: 25%;text-align: center;">
+          <div style="width: 235px; margin-left: 30%; height: 100%;">
+          <div class="dropdown-menu" id="dropdown-menu" style="float: right; padding-top: 10%; padding-bottom: 10%; ">
+            <button onclick="handleDropdownClicked(event)">
+              <span class="material-symbols-outlined">
+                dropdown
+              </span>
+              Select Animation
+              <span id="dropdown-icon" class="material-symbols-outlined">
+                expand_more
+              </span>
+            </button>
+            <section class="dropdown__menu-labels">
+              <button value="comp1" onclick="showDiv(this.value)">
+                
+                Animation 1
+              </button>
+              <button value="comp2" onclick="showDiv(this.value)">
+                
+                Animation 2
+              </button>
+              <button value="comp3" onclick="showDiv(this.value)">
+                
+                Animation 3
+              </button>
+              <button value="comp4" onclick="showDiv(this.value)">
+                
+                Animation 4
+              </button>
+              <button value="comp14" onclick="showDiv(this.value)">
+                
+                Animation 5
+              </button>
+              <button value="comp6" onclick="showDiv(this.value)">
+                
+                Animation 6
+              </button>
+              <button value="comp7" onclick="showDiv(this.value)">
+                
+                Animation 7
+              </button>
+              <button value="comp16" onclick="showDiv(this.value)">
+                
+                Animation 8
+              </button>
+              <button value="comp9" onclick="showDiv(this.value)">
+                
+                Animation 9
+              </button>
+              <button value="comp10" onclick="showDiv(this.value)">
+                
+                Animation 10
+              </button>
+              <button value="comp11" onclick="showDiv(this.value)">
+                
+                Animation 11
+              </button>
+              <button value="comp12" onclick="showDiv(this.value)">
+                
+                Animation 12
+              </button>
+              <button value="comp13" onclick="showDiv(this.value)">
+                
+                Animation 13
+              </button>
+              
+              
+            </section>
+          </div>
+          <script type="text/javascript" src="js/dropdown.js"></script>
+
+          <div class="select-txt-color" style="width: 40%;height: 64px; float: left; ; background-color: #11101D;text-align: center; border-radius: 12px; display: grid; grid-template-columns: 1fr;">
+            <label for="color-picker" style="color: #dfe0e7; font-size:16px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 10px;">Text Color:</label>
+            <input type="color" value="#ff0000" id="color-picker2" style="margin-left: 30%;" />
+          </div>
+
+          <div class="componentsBox" style=" float: left; margin-left: 15% ; width: 100px; height: 64px; display: grid; grid-template-columns: 1fr; background-color: #11101D;text-align: center; border-radius: 12px;">
+            <span style="color: #dfe0e7; font-size:16px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 10px;">Alt Logo:</span> 
+            <label class="switch m5">
+              <input type="checkbox" id="check" onchange="changePic()">
+              <small></small>
+            </label>
+          </div>
+          
+          <script type="text/javascript">
+            function changePic() {
+              var amazonImage = document.getElementById('amazon');
+              
+              if (document.getElementById("check").checked) {
+               
+                amazonImage.src = "images/amazon-Dark.png";
+              } else {
+                
+                amazonImage.src = "images/amazon-Light.png";
+              }
+            }
+          </script>
+          <div class="music-player" style="padding-top: 200px; padding-bottom: 20px;">
+            <select id="musicSelect" style="background-color:#11101D;
+            color: #dfe0e7;
+            height: 30px;
+            border-radius: 12px;
+            text-align: center;">
+                <option value="music/song1.mp3">Song 1</option>
+                <option value="music/song2.mp3">Song 2</option>
+                
+                <!-- Add more songs with corresponding file names -->
+            </select>
+            <button style="background-color:#11101D;
+            color: #dfe0e7;
+            height: 30px;
+            border-radius: 12px;
+            text-align: center;" id="playButton">Play</button>
+            <button style="background-color:#11101D;
+            color: #dfe0e7;
+            height: 30px;
+            border-radius: 12px;
+            text-align: center;" id="stopButton">Stop</button>
+        </div>
+    
+        <script>
+    
+            var audio;  // Declare audio variable in a broader scope
+    
+        document.getElementById('playButton').addEventListener('click', function() {
+        if(audio){
+          audio.pause();  // Pause the audio instead of stopping it
+          audio.currentTime = 0;;
+        }
+          var selectedMusic = document.getElementById('musicSelect').value;
+        audio = new Audio(selectedMusic);
+        audio.play();
+        });
+    
+        document.getElementById('stopButton').addEventListener('click', function() {
+        if (audio) {
+            audio.pause();  // Pause the audio instead of stopping it
+            audio.currentTime = 0;  // Reset the audio to the beginning
+        }
+        });
         </script>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <div class="camera">
-          <video id="video" style="width: 400px;" autoplay></video>
-          <div>
-            <button id="startRecord">Record</button>
-            <button id="stopRecord" disabled>Stop</button>
+          <div class="camera">
+            <video id="video" style="width: 400px; display: none;" autoplay></video>
+            <div>
+              <button style="background-color:#11101D;
+              color: #dfe0e7;
+              height: 30px;
+              border-radius: 12px;
+              text-align: center;" id="startRecord" onclick="recordEvent()">Record</button>
+              <button style="display: none;" id="stopRecord" disabled>Stop</button>
+            </div>
+            <div>
+              <h3 style="color: #11101D;">Recorded videos:</h3>
+              <div id="videoList"></div>
+            </div>
           </div>
-          <div>
-            <h3>Recorded videos:</h3>
-            <div id="videoList"></div>
+          <script src="js/recording.js"></script>
           </div>
+          
+        </td>
+      </tr>
+      <tr style="height: 350px; width: 100%;">
+        <td class="tg-0pky" style="    width: 10%;        ">
+          <h3 style="color: #11101D; font-size: 16px; font-family: Cambria; margin-bottom: 0%;">Ad Text:</h3>
+          <div class="input-group" style="display: flex;">
+            <input  type="text" class="form-control" id="text-in1" value='High Quality'>
+            <div class="input-group-append">
+                <button class="btn btn-secondary" type="button" id="btn-in1">
+                    <span class="material-symbols-outlined">
+                        undo
+                    </span>
+                </button>
+            </div>
         </div>
-        <script src="js/recording.js"></script>
-      </td>
-    </tr>
-    
-    
-  </tbody>
-  </table>
+        
+        <div class="input-group" style="top: 20%; display: flex;">
+            <input type="text" class="form-control" id="text-in2" value='Best offer'>
+            <div class="input-group-append">
+                <button class="btn btn-secondary" type="button" id="btn-in2">
+                    <span class="material-symbols-outlined">
+                        undo
+                    </span>
+                </button>
+            </div>
+        </div>
+        <div class="input-group" style="top: 20%; display: flex;">
+          <input type="text" class="form-control" id="text-in3" value="Don't Miss Out">
+          <div class="input-group-append">
+              <button class="btn btn-secondary" type="button" id="btn-in3">
+                  <span class="material-symbols-outlined">
+                      undo
+                  </span>
+              </button>
+          </div>
+      </div>
+      <div class="input-group" style="top: 20%; display: flex;">
+        <input type="text" class="form-control" id="text-in4" value='Get it Now!'>
+        <div class="input-group-append">
+            <button class="btn btn-secondary" type="button" id="btn-in4">
+                <span class="material-symbols-outlined">
+                    undo
+                </span>
+            </button>
+        </div>
+    </div>
+            
+            <script src="js/text-in.js">
+             
+            </script>
+           
+          
+          
+        </td>
+        <td class="tg-0pky"  >
+          <div class="BGcontent">
+            <div class="image" onclick="handleImageClick(this)"><img src="images/bg/bg1.jpg" style="width: 100%; height: 100%;"><input type="radio" name="image" /></div>
+            <div class="image" onclick="handleImageClick(this)"><img src="images/bg/bg2.jpg" style="width: 100%; height: 100%;"><input type="radio" name="image" /></div>
+            <div class="image" onclick="handleImageClick(this)"><img src="images/bg/bg3.jpg" style="width: 100%; height: 100%;"><input type="radio" name="image" /></div>
+            <div class="image" onclick="handleImageClick(this)"><img src="images/bg/bg4.jpg" style="width: 100%; height: 100%;"><input type="radio" name="image" /></div>
+            <div class="image" onclick="handleImageClick(this)"><img src="images/bg/bg5.jpg" style="width: 100%; height: 100%;"><input type="radio" name="image" /></div>
+            <div class="image" onclick="handleImageClick(this)"><img src="images/bg/bg6.jpg" style="width: 100%; height: 100%;"><input type="radio" name="image" /></div>
+          </div>
+          <script src="js/bg-select.js"></script>
+        </td>
+        <td class="tg-0pky"></td>
+      </tr>
+    </thead>
+    </table>
 
 
-  <div class="color-picker-panel" style="float: right;">
-    <div class="panel-row">
-      <div class="swatches default-swatches"></div>
-      <button class="button eyedropper">Get Color</button>
+<div style = "float:right">
+  <div class="color-picker-panel">
+  <div class="panel-row">
+    <div class="swatches default-swatches"></div>
+    <button class="button eyedropper">Get Color</button>
+  </div>
+  <div class="panel-row">
+    <div class="spectrum-map">
+      <button id="spectrum-cursor" class="color-cursor"></button>
+      <canvas id="spectrum-canvas"></canvas>
     </div>
-    <div class="panel-row">
-      <div class="spectrum-map">
-        <button id="spectrum-cursor" class="color-cursor"></button>
-        <canvas id="spectrum-canvas"></canvas>
-      </div>
-      <div class="hue-map">
-        <button id="hue-cursor" class="color-cursor"></button>
-        <canvas id="hue-canvas"></canvas>
-      </div>
-    </div>
-    <div class="panel-row">
-      <div id="rgb-fields" class="field-group value-fields rgb-fields active">
-        <div class="field-group">
-          <label for="" class="field-label">R:</label>
-          <input type="number" max="255" min="0" id="red" class="field-input rgb-input"/>
-        </div>
-        <div class="field-group">
-          <label for="" class="field-label">G:</label>
-          <input type="number" max="255" min="0" id="green" class="field-input rgb-input"/>
-        </div>
-        <div class="field-group">
-          <label for="" class="field-label">B:</label>
-          <input type="number" max="255" min="0" id="blue" class="field-input rgb-input"/>
-        </div>
-      </div>
-      <div id="hex-field" class="field-group value-fields hex-field">
-        <label for="" class="field-label">Hex:</label>
-        <input type="text" id="hex" class="field-input"/>
-      </div>
-      <button id="mode-toggle" class="button mode-toggle">Mode</button>
-    </div>
-    <div class="panel-row">
-      <h2 class="panel-header">User Colors</h2>
-      <div id="user-swatches" class="swatches custom-swatches">
-      </div>
-      <button id="add-swatch" class="button add-swatch">
-        <span id="color-indicator" class="color-indicator"></span><span>Add to Swatches</span>
-      </button>
+    <div class="hue-map">
+      <button id="hue-cursor" class="color-cursor"></button>
+      <canvas id="hue-canvas"></canvas>
     </div>
   </div>
-  
-  
-  <script src="js/w3color.js"></script>
+  <div class="panel-row">
+    <div id="rgb-fields" class="field-group value-fields rgb-fields active">
+      <div class="field-group">
+        <label for="" class="field-label">R:</label>
+        <input type="number" max="255" min="0" id="red" class="field-input rgb-input"/>
+      </div>
+      <div class="field-group">
+        <label for="" class="field-label">G:</label>
+        <input type="number" max="255" min="0" id="green" class="field-input rgb-input"/>
+      </div>
+      <div class="field-group">
+        <label for="" class="field-label">B:</label>
+        <input type="number" max="255" min="0" id="blue" class="field-input rgb-input"/>
+      </div>
+    </div>
+    <div id="hex-field" class="field-group value-fields hex-field">
+      <label for="" class="field-label">Hex:</label>
+      <input type="text" id="hex" class="field-input"/>
+    </div>
+    <button id="mode-toggle" class="button mode-toggle">Mode</button>
+  </div>
+  <div class="panel-row">
+    <h2 class="panel-header">User Colors</h2>
+    <div id="user-swatches" class="swatches custom-swatches">
+    </div>
+    <button id="add-swatch" class="button add-swatch">
+      <span id="color-indicator" class="color-indicator"></span><span>Add to Swatches</span>
+    </button>
+  </div>
+</div>
+</div>
+
+
+<script src="js/w3color.js"></script>
+
+
+
+
+
+
+
+
 
 
 

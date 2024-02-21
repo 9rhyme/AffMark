@@ -1,3 +1,4 @@
+//https://github.com/bgrins/TinyColor
 
 var addSwatch = document.getElementById('add-swatch');
 var modeToggle = document.getElementById('mode-toggle');
@@ -154,7 +155,6 @@ function setCurrentColor(color){
   color = tinycolor(color);
   currentColor = color;
   colorIndicator.style.backgroundColor = color;
-
   // Set the background color of the .inner element
   var innerElements = document.querySelectorAll('.inner');
   if (innerElements) {
@@ -162,12 +162,8 @@ function setCurrentColor(color){
       element.style.backgroundColor = color;
     });
   }
-
-  // Optionally, you can remove the following line that sets the background color of the entire document:
-  // document.body.style.backgroundColor = color;
-
-  spectrumCursor.style.backgroundColor = color;
-  hueCursor.style.backgroundColor = 'hsl(' + color.toHsl().h + ', 100%, 50%)';
+  spectrumCursor.style.backgroundColor = color; 
+  hueCursor.style.backgroundColor = 'hsl('+ color.toHsl().h +', 100%, 50%)';
 };
 
 function updateHueCursor(y){
@@ -176,6 +172,8 @@ function updateHueCursor(y){
 
 function updateSpectrumCursor(x, y){
   //assign position
+  x-=15;
+  y-=15;
   spectrumCursor.style.left = x + 'px';
   spectrumCursor.style.top = y + 'px';  
 };
@@ -191,8 +189,8 @@ function getSpectrumColor(e) {
   // got some help here - http://stackoverflow.com/questions/23520909/get-hsl-value-given-x-y-and-hue
   e.preventDefault();
   //get x/y coordinates
-  var x = e.pageX - spectrumRect.left;
-  var y = e.pageY - spectrumRect.top;
+  var x = e.pageX -  spectrumRect.left;
+  var y = e.pageY -  spectrumRect.top;
   //constrain x max
   if(x > spectrumRect.width){ x = spectrumRect.width}
   if(x < 0){ x = 0}

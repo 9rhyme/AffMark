@@ -6,8 +6,7 @@
   
   .dropdown-menu {
     position: relative;
-    left: -22%;
-    top: 1%;
+    
   }
   
   .dropdown-menu > button:hover {
