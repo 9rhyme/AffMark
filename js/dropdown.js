@@ -18,6 +18,6 @@ const handleDropdownClicked = (event) => {
       ? "close"
       : "expand_more";
   };
-  
+ 
   document.body.addEventListener("click", () => toggleDropdownMenu());
   
