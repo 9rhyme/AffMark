@@ -1,11 +1,11 @@
 const handleDropdownClicked = (event) => {
     event.stopPropagation();
-    const dropdownMenu = document.getElementById("dropdown-menu");
+    const dropdownMenu = document.getElementById("My_dropdown-menu");
     toggleDropdownMenu(!dropdownMenu.classList.contains("open"));
   };
   
   const toggleDropdownMenu = (isOpen) => {
-    const dropdownMenu = document.getElementById("dropdown-menu");
+    const dropdownMenu = document.getElementById("My_dropdown-menu");
     const dropdownIcon = document.getElementById("dropdown-icon");
   
     if (isOpen) {

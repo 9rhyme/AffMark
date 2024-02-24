@@ -1,15 +1,17 @@
 .color-picker-panel {
   background: #1F232A;
-  width: 310px;
+  width: 70%; /* Use a percentage for width */
+  max-width: 310px; /* Set a max-width for larger screens */
   border-radius: 8px;
   border: 2px solid #364347;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  position: fixed;
-  top: 33%;
-  left: 63%;
-  
+  position: absolute; /* Change to absolute positioning */
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
+  
 }
+
 .panel-row {
   position: relative;
   margin: 0 10px 10px;
@@ -79,8 +81,8 @@
 }
 .spectrum-map {
   position: relative;
-  width: 212px;
-  height: 200px;
+  width: 100%; /* Use a percentage for width */
+  height: 150px;
   overflow: hidden;
 }
 #spectrum-canvas {
@@ -97,8 +99,8 @@
   position: absolute;
   top: 5px;
   bottom: 5px;
-  right: 29px;
-  width: 10px;
+  right: 10%; /* Adjust based on your layout */
+  width: 5%; /* Adjust based on your layout */
 }
 #hue-canvas {
   border-radius: 8px;
@@ -136,7 +138,8 @@
 .button.add-swatch {
   display: block;
   padding: 6px;
-  width: 200px;
+  width: 80%; /* Use a percentage for width */
+  max-width: 200px; /* Set a max-width for larger screens */
   margin: 10px auto 0;
 }
 .button.mode-toggle {
@@ -193,4 +196,16 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
   /* <-- Apparently some margin are still there even though it's hidden */
+}
+@media (max-width: 768px) {
+  .color-picker-panel {
+    width: 90%; /* Adjust for smaller screens */
+  }
+  .spectrum-map{
+    height: 80px;
+  }
+
+  .button.add-swatch {
+    width: 90%; /* Adjust for smaller screens */
+  }
 }
